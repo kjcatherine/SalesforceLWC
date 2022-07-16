@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Welcome to Our Restaurant">
+        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+            <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <img src={restaurantLogo} alt="Restaurant Logo"/>
+            </div>
+            <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <p>{restaurantDescription}</p>
+            </div>
+        </div>
+        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+            <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-card title="Featured Menu Items">
+                    <template for:each={featuredMenuItems} for:item="menuItem">
+                        <div key={menuItem.id} class="slds-m-bottom_small">
+                            <div class="slds-grid slds-wrap slds-grid_align-spread">
+                                <div class="slds-size_1-of-2 slds-medium-size_3-of-4">
+                                    <h3>{menuItem.name}</h3>
+                                    <p>{menuItem.description}</p>
+                                    <p>${menuItem.price}</p>
+                                </div>
+                                <div class="slds-size_1-of-2 slds-medium-size_1-of-4">
+                                    <img src={menuItem.image} alt={menuItem.name}/>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </lightning-card>
+            </div>
+            <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12">
+                <lightning-card title="Make a Reservation">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-p-around_medium">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your full name" value={fullName} onchange={handleNameChange}/>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-medium-size_6-of-12 slds-p-around_medium">
+                            <label>Number of Guests</label>
+                            <input type="number" min="1" max="10" value={numGuests} onchange={handleGuestChange}/>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-p-around_medium">
+                            <label>Date and Time</label>
+                            <lightning-input type="datetime-local" value={reservationDateTime} onchange={handleDateTimeChange}></lightning-input>
+                        </div>
+                        <div class="slds-size_12-of-12 slds-p-around_medium">
+                            <lightning-button label="Make Reservation" variant="brand" onclick={handleReservation}></lightning-button>
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+        </div>
+    </lightning-card>
+</template>
