@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 import {NavigationMixin} from 'lightning/navigation'
 //we need this for the default values part
-import {encodeDefaultFieldvalues} from 'lightning/pageReferenceUtils'
+import {encodeDefaultFieldValues} from 'lightning/pageReferenceUtils'
 export default class NavigateToObjectPage extends NavigationMixin(LightningElement) {
 
     navigateToNewRecord(){
@@ -15,7 +15,7 @@ export default class NavigateToObjectPage extends NavigationMixin(LightningEleme
     }
 
     navigateToNewRecordWithDefault(){
-        const defaultValue = encodeDefaultFieldvalues({
+        const defaultValue = encodeDefaultFieldValues({
             FirstName: 'Raymond',
             LastName: 'Reddington',
             LeadSource: 'other'
