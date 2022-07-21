@@ -32,4 +32,17 @@ export default class NavigateToObjectPage extends NavigationMixin(LightningEleme
         })
     }
 
+    navigateToListView(){
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'Contact',
+                actionName: 'list'
+            },
+            state:{
+                filterName: 'Recent'
+            }
+        })
+    }
+
 }
