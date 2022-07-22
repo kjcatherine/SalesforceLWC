@@ -45,4 +45,14 @@ export default class NavigateToObjectPage extends NavigationMixin(LightningEleme
         })
     }
 
+    navigateToFiles(){
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'ContentDocument',
+                actionName: 'home'
+            }
+        })
+    }
+
 }
