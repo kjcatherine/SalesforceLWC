@@ -12,4 +12,15 @@ export default class NavigateToRecordPage extends NavigationMixin(LightningEleme
             }
         })
     }
+
+    recordEditMode(){
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: '0033M00001I2MCzQAN',
+                objectApiName: 'Contact',
+                actionName: 'edit'
+            }
+        })
+    }
 }
