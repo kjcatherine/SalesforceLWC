@@ -12,5 +12,4 @@ export default class NavigateToRelatedRelationship extends NavigationMixin(Light
             }
         })
     }
-    }
 }
