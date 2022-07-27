@@ -6,7 +6,7 @@ export default class NavigateToWebPage extends NavigationMixin(LightningElement)
         this[NavigationMixin.Navigate]({
             type: 'standard__webPage',
             attributes: {
-                url: 'https://www.catherinekj.netlify.app',
+                url: 'https://catherinekj.netlify.app/',
             }
         })
     }
