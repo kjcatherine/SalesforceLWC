@@ -5,7 +5,11 @@ export default class NavigateToLwc extends NavigationMixin(LightningElement) {
     navigateToLwc(){
 
         var defination = {
-            componentDef: 'c:navigationLwcTarget'
+            componentDef: 'c:navigationLwcTarget',
+            //optionally to pass data such as record id, them we iport it in the target comp js
+            attributes:{
+                recordId: '45678999999999'
+            }
         }
 
         this[NavigationMixin.Navigate]({
