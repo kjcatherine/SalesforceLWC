@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent'
 
 import ACCOUNT_OBJECT from '@salesforce/schema/Account'
@@ -9,6 +9,10 @@ import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry'
 
 export default class RecordFormDemo extends LightningElement {
 
+    //to fetch record id dynamically, these two properties are only availale on the 
+    //record page so dont expect it to shpw on the app page
+    @api recordId
+    @api objectApiName
     objectName = ACCOUNT_OBJECT
     fieldList = [NAME_FIELD, ANNUAL_REVENUE_FIELD, TYPE_FIELD, INDUSTRY_FIELD]
 
