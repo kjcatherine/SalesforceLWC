@@ -14,4 +14,14 @@ export default class RecordEditFormDemo extends LightningElement {
         phoneField:PHONE_FIELD,
         emailField:EMAIL_FIELD
     }
+
+    //to reset the form
+    handleReset(){
+        const inputFields = this.template.querySelectorAll('lightning-input-field')
+        if(inputFields){
+            Array.from(inputFields).forEach(field =>{
+                field.reset()
+            })
+        }
+    }
 }
