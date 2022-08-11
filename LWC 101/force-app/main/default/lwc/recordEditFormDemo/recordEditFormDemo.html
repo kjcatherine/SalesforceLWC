@@ -11,7 +11,9 @@
             <lightning-input-field field-name={fields.nameField}></lightning-input-field>
             <lightning-input-field field-name={fields.titleField}></lightning-input-field>
             <lightning-input-field field-name={fields.phoneField}></lightning-input-field>
-            <lightning-input-field field-name={fields.emailField}></lightning-input-field>
+            <!-- demonstarting adding custom label to field and hiding the default one -->
+            <label class="slds-p-left_x-small">Enter Your Email</label>
+            <lightning-input-field variant="label-hidden" field-name={fields.emailField}></lightning-input-field>
 
             <lightning-button onclick={handleReset} class="slds-m-around_xx-small" label="Cancel"></lightning-button>
             <lightning-button variant="brand" type="submit" class="slds-m-around_xx-small" label="Save"></lightning-button>
