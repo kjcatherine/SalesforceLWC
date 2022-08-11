@@ -2,7 +2,6 @@
     <lightning-card title="Parent to Child Non-primitive data communication">
         <div class="slds-var-m-around_medium">
             <lightning-carousel>
-
                 <template for:each={carouselDetails} for:item="item">
                     <lightning-carousel-image
                         key={item.header}
@@ -11,7 +10,6 @@
                         description={item.description}>
                     </lightning-carousel-image>
                 </template>
-
             </lightning-carousel>
         </div>
     </lightning-card>

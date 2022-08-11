@@ -1,0 +1,62 @@
+/* .logodiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+.logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 100px;
+    height: 100px;
+  } */
+.push-container{
+    margin-top: 2rem;
+}
+.header{
+    color: #ef4101;
+    font-size: 2.5rem;
+    font-style: oblique;
+}
+.carousel-subheading{
+    color: #21304b;
+    font-size: 1rem;
+}
+.btn{
+    background-color: #f7f7f7;
+}
+.btn2{
+    background: #ef4101;
+    border: 1px solid #ef4101;
+    padding: 5px 10px;
+    color: white;
+    font-size: 0.9rem;
+}
+.form-title{
+    color: #21304b;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    margin-left: 0.5rem;
+}
+.menu{
+    font-size: 1.3rem;
+    padding-left: 1rem;
+    color: #21304b;
+    font-weight: 600;
+}
+.tagline{
+    font-size: 1.1rem;
+    font-style: oblique;
+    text-align: center;
+    font-family: serif;
+    color: #21304b;
+}
+/* .THIS .cardStyle {
+    background-color: #192841;
+} */
+
+/* .header{
+    background-image: restaurantLogo;
+} */

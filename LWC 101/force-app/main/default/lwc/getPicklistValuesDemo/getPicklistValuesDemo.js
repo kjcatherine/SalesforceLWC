@@ -10,7 +10,7 @@ export default class GetPicklistValuesDemo extends LightningElement {
     typeOptions = []
     //To get the recordTypeId
     @wire(getObjectInfo, {objectApiName: ACCOUNT_OBJECT})
-    objectInfo
+    objectInfo;
     //objectInfo.data.defaultRecordTypeId
 
 
