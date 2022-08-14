@@ -19,6 +19,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>cssParentDemo</componentName>
+                <identifier>c_cssParentDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>shadowDomStyling</componentName>
                 <identifier>c_shadowDomStyling</identifier>
             </componentInstance>

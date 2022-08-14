@@ -12,10 +12,16 @@
     <label>Zero to Hero in LWC</label>
     <navType>Standard</navType>
     <tabs>LWC_Fundamentals</tabs>
+    <tabs>Base_Components</tabs>
+    <tabs>Navigations</tabs>
+    <tabs>Restaurant_Page</tabs>
     <tabs>Quiz_App</tabs>
     <tabs>Styling_in_LWC</tabs>
     <tabs>Lifecycle_Hooks</tabs>
     <tabs>Component_Communication</tabs>
+    <tabs>Reuseable_Component</tabs>
+    <tabs>Lightning_Messaging_Service</tabs>
+    <tabs>Static_Resources_Context_and_Toast</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Zero_to_Hero_in_LWC_UtilityBar</utilityBar>
 </CustomApplication>
