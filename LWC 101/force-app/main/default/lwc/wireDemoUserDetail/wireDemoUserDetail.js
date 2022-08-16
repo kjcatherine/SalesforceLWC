@@ -4,6 +4,7 @@ import Id from '@salesforce/user/Id'
 
 export default class WireDemoUserDetail extends LightningElement {
     userId = Id;
+    userDetail;
     //0053M000003XfuXQAS
 
     // @wire (adapter, {adapterConfig})
@@ -11,8 +12,18 @@ export default class WireDemoUserDetail extends LightningElement {
 
     @wire(getRecord, {recordId:'0053M000003XfuXQAS', fields:['User.Name', 'User.Email']})
 
-    userDetailhandler(response){
-        consilelog(response)
+   // userDetailhandler({data, error}) //some people destructure its the same
+    // userDetailhandler(response){
+    //     console.log(response)
+    // }
+    
+    userDetailHandler({data, error}){
+        if(data){
+            this.userDetail = data.fields;
+        }
+        if(error){
+            console.error(error)
+        }
     }
 
 }

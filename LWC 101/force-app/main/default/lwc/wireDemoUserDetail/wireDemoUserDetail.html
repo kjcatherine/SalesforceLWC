@@ -1,7 +1,11 @@
 <template>
     <lightning-card title="User detail using wire">
         <div class="slds-var-p-around_medium">
-           {userId}
+           <!-- {userId} -->
+           <template if:true={userDetail}>
+                <div>Email - {userDetail.Email.value}</div>
+                <div>Name - {userDetail.Name.value}</div>
+           </template>
         </div>
     </lightning-card>
 </template>
