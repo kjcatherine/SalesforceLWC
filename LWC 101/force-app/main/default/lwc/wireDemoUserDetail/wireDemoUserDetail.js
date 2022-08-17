@@ -16,7 +16,7 @@ export default class WireDemoUserDetail extends LightningElement {
     // userDetailhandler(response){
     //     console.log(response)
     // }
-    
+    //function approach
     userDetailHandler({data, error}){
         if(data){
             this.userDetail = data.fields;
@@ -25,5 +25,9 @@ export default class WireDemoUserDetail extends LightningElement {
             console.error(error)
         }
     }
+
+    //propert approach
+    @wire(getRecord, {recordId:'0053M000003XfuXQAS', fields:['User.Name', 'User.Email']})
+    userDetailProperty; //response from above immediately gets received here
 
 }
