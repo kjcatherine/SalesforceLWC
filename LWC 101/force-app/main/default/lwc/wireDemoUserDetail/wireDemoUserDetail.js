@@ -19,7 +19,10 @@ export default class WireDemoUserDetail extends LightningElement {
     // @wire(getRecord, {recordId:'0053M000003XfuXQAS', fields:[NAME_FIELD, EMAIL_FIELD]})
 
     //another way fields:fields, if key/value are same, just rep with one
-    @wire(getRecord, {recordId:'0053M000003XfuXQAS', fields})
+    //@wire(getRecord, {recordId:'0053M000003XfuXQAS', fields})
+    //importing id reference is asynchronous, so if we replace the hadcoded id with this.userId, it throws an error because its not yet avaiable when we call the getrecords wire
+    //how to solve this? we make it reactive by using $ infront of the property in quotes, which basically says update it imediately its available, do not do $this.userId, dont use this keyword
+    @wire(getRecord, {recordId:'$userId', fields})
    // userDetailhandler({data, error}) //some people destructure its the same
     // userDetailhandler(response){
     //     console.log(response)
@@ -35,7 +38,7 @@ export default class WireDemoUserDetail extends LightningElement {
     }
 
     //property approach
-    @wire(getRecord, {recordId:'0053M000003XfuXQAS', fields})
+    @wire(getRecord, {recordId:'$userId', fields})
     userDetailProperty; //response from above immediately gets received here
 
 }
