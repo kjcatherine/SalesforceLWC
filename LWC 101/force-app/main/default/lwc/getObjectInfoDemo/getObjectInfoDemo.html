@@ -6,8 +6,11 @@
     </lightning-card> -->
     <lightning-card title="getObjectInfo Adapter as a property">
         <div class="slds-var-p-around_medium">
-            <div>defaultRecordTypeId: {objectInfoProperty.data.defaultRecordTypeId}</div>
-            <div>Object Api Name: {objectInfoProperty.data.apiName}</div>
+            <template if:true={objectInfoProperty.data}>
+                <div>defaultRecordTypeId: {objectInfoProperty.data.defaultRecordTypeId}</div>
+                <div>Object Api Name: {objectInfoProperty.data.apiName}</div>
+            </template>
+            
         </div>
     </lightning-card>
 </template>
