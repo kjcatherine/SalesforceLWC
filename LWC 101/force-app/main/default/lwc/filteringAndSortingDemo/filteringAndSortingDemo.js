@@ -30,7 +30,7 @@ export default class FilteringAndSortingDemo extends LightningElement {
     }
 
     filterByHandler(event){
-        this.filterBy = event.target.name
+        this.filterBy = event.target.value
     }
 
 
