@@ -1,8 +1,10 @@
 import { LightningElement, wire } from 'lwc';
-import {getObjectInfo} from 'lightning/uiObjectInfoApi'
+import {getObjectInfo, getObjectInfos} from 'lightning/uiObjectInfoApi'
 import ACCOUNT_OBJECT from '@salesforce/schema/Account'
+import OPPORTUNITY_OBJECT from '@salesforce/schema/Opportunity'
 export default class GetObjectInfoDemo extends LightningElement {
     // defaultRecordTypeId; //got his from the data we got from console logging the data object
+    // //getObjectInfo for single object
     // @wire(getObjectInfo, {objectApiName: ACCOUNT_OBJECT})
 
     // objectInfo({data, error}){
@@ -19,4 +21,14 @@ export default class GetObjectInfoDemo extends LightningElement {
     //as a property
     @wire(getObjectInfo, {objectApiName: ACCOUNT_OBJECT})
     objectInfoProperty
+
+     //getObjectInfos for multiple object
+     objectApiNames = [ACCOUNT_OBJECT, OPPORTUNITY_OBJECT]
+     @wire(getObjectInfos, {objectApiName: '$objectApiNames'})
+     objectInfosHandler({data}){
+        if(data){
+            console.log(data)
+        }
+
+     }
 }
