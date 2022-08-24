@@ -17,4 +17,3 @@ formattedNumber = new Intl.NumberFormat('ar-EG', {
     currencyDisplay: 'symbol'
 }).format(this.number)
 }
-

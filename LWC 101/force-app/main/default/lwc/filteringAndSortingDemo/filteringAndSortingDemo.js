@@ -43,14 +43,13 @@ export default class FilteringAndSortingDemo extends LightningElement {
                 console.log(value)
                 this.filteredData = this.fullTableData.filter(eachObj=>{
                     if(this.filterBy === 'All'){
-                        return Object.keys(eachobj).some(key=>{
-                            return eachobj[key].toLowerCase().includes(value)
+                        return Object.keys(eachObj).some(key=>{
+                        return eachObj[key].toLowerCase().includes(value)
                         })
                     }else{
                         const val = eachObj[this.filterBy] ? eachObj[this.filterBy] : ''
-                        val.toLowerCase().includes(value)
+                        return val.toLowerCase().includes(value)
                     }
-                    
                     //Below logic will filter each and every property of object
                     //Object.keys(eachobj) = ["Id", "Name", "Title", "Email"]
                     // return Object.keys(eachobj).some(key=>{
