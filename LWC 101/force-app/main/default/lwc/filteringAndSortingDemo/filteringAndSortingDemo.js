@@ -37,24 +37,21 @@ export default class FilteringAndSortingDemo extends LightningElement {
     filterHandler(event){
         const {value} = event.target
         // console.log(value)
+        window.clearTimeout(this.timer)
         if(value){
-            window.clearTimeout(this.timer)
             this.timer = window.setTimeout(()=>{
                 console.log(value)
                 this.filteredData = this.fullTableData.filter(eachObj=>{
                     if(this.filterBy === 'All'){
+                        //Below logic will filter each and every property of object
                         return Object.keys(eachObj).some(key=>{
                         return eachObj[key].toLowerCase().includes(value)
                         })
                     }else{
+                        //Below logic will filter only selected fields
                         const val = eachObj[this.filterBy] ? eachObj[this.filterBy] : ''
                         return val.toLowerCase().includes(value)
                     }
-                    //Below logic will filter each and every property of object
-                    //Object.keys(eachobj) = ["Id", "Name", "Title", "Email"]
-                    // return Object.keys(eachobj).some(key=>{
-                    //     return eachobj[key].toLowerCase().includes(value)
-                    // })
                 })
             }, 500)
             }else{
