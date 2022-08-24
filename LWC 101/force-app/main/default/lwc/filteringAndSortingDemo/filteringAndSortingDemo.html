@@ -2,11 +2,7 @@
     <lightning-card title="Client Side Filtering Demo">
         <div class="slds-p-around_medium">
             <lightning-layout>
-                <lightning-layout-item size="4" padding="around_small">
-                    <lightning-input type="text" 
-                    label="Filter" 
-                    onkeyup={filterHandler}
-                    ></lightning-input>
+                <lightning-layout-item size="2" padding="around_small">
                     <lightning-combobox
                     name="filterBy"
                     label="FilterBy"
@@ -15,6 +11,12 @@
                     options={FilterByOptions}
                     onchange={filterByHandler} >
                     </lightning-combobox>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" padding="around_small">
+                    <lightning-input type="text" 
+                    label="Filter" 
+                    onkeyup={filterHandler}
+                    ></lightning-input>
                 </lightning-layout-item>
             </lightning-layout>
             <table class="slds-table slads-table_cell-buffer slds-table_bordered">
