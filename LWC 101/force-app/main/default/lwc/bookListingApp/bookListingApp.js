@@ -14,10 +14,11 @@ export default class BookListingApp extends LightningElement {
         .then(data=>{
             console.log(data)
             this.books = data
+            console.log('what does book look like', this.books)
         })
         .catch(error=>console.error(error))
     }
-    
+
     fetchBooksHandler(event){
         this.query= event.target.value
         window.clearTimeout(this.timer)
