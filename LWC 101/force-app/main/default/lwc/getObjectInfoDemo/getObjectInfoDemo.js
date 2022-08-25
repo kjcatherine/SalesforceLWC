@@ -24,7 +24,7 @@ export default class GetObjectInfoDemo extends LightningElement {
 
      //getObjectInfos for multiple object
      objectApiNames = [ACCOUNT_OBJECT, OPPORTUNITY_OBJECT]
-     @wire(getObjectInfos, {objectApiName: '$objectApiNames'})
+     @wire(getObjectInfos, {objectApiNames: '$objectApiNames'})
      objectInfosHandler({data}){
         if(data){
             console.log(data)
