@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="ggetPicklistValues Demo">
+        <div class="slds-var-p-around_medium">
+            <!-- got this from component reference -->
+            <lightning-combobox
+            name="Industry"
+            label="Industry"
+            value={selectedIndustry}
+            placeholder="Select Industry"
+            options={industryOptions}
+            onchange={handleChange} >
+            </lightning-combobox>
+        </div>
+    </lightning-card>
+</template>
