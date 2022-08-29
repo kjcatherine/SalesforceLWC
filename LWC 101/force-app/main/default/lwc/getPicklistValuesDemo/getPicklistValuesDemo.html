@@ -1,5 +1,5 @@
 <template>
-    <lightning-card title="ggetPicklistValues Demo">
+    <lightning-card title="getPicklistValues Demo with Industry Field">
         <div class="slds-var-p-around_medium">
             <!-- got this from component reference -->
             <lightning-combobox
@@ -12,5 +12,20 @@
             </lightning-combobox>
         </div>
         <p>selectedIndustry: {selectedIndustry}</p>
+    </lightning-card>
+
+    <lightning-card title="ggetPicklistValues Demo with Type Field">
+        <div class="slds-var-p-around_medium">
+            <!-- got this from component reference -->
+            <lightning-combobox
+            name="Type"
+            label="Type"
+            value={selectedType}
+            placeholder="Select Type"
+            options={typeOptions}
+            onchange={handleTypeChange} >
+            </lightning-combobox>
+        </div>
+        <p>selectedType: {selectedType}</p>
     </lightning-card>
 </template>
