@@ -10,13 +10,16 @@ export default class GetRecordDemo extends LightningElement {
     owner
     AnnualRevenue
     @api recordId
-    @wire(getRecord, {recordId: '$recordId', fields:[NAME_FIELD, OWNER_NAME_FIELD, ANNUAL_REVENUE_FIELD]})
+    //Fields wire mode
+    //@wire(getRecord, {recordId: '$recordId', fields:[NAME_FIELD, OWNER_NAME_FIELD, ANNUAL_REVENUE_FIELD]})
+    //Layout wire mode-returns all the fields available in the layout when you check the console, got with fields type if you just need a few fields
+    @wire(getRecord, {recordId: '$recordId', layoutTypes:['Full'], modes:['View']})
     accountHandler({data}){
         if(data){
             console.log(data)
             this.name = data.fields.Name.displayValue ? data.fields.Name.displayValue : data.fields.Name.value
             this.AnnualRevenue = data.fields.AnnualRevenue.displayValue ? data.fields.AnnualRevenue.displayValue : data.fields.AnnualRevenue.value
-            this.owner = data.fields.owner.displayValue ? data.fields.owner.displayValue : data.fields.owner.value
+            this.owner = data.fields.Owner.displayValue ? data.fields.Owner.displayValue : data.fields.Owner.value
         }
     }
 }
