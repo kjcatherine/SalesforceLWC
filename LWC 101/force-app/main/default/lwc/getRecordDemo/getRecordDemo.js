@@ -1,5 +1,5 @@
 import { LightningElement, wire, api } from 'lwc';
-import {getRecord, getFieldValue} from 'lightning/uiRecordApi'
+import {getRecord, getFieldValue,getFieldDisplayValue} from 'lightning/uiRecordApi'
 //import ACCOUNT_OBJECT from '@salesforce/schema/Account'
 import NAME_FIELD from '@salesforce/schema/Account.Name'
 import OWNER_NAME_FIELD from '@salesforce/schema/Account.Owner.Name'
@@ -14,15 +14,23 @@ export default class GetRecordDemo extends LightningElement {
     @wire(getRecord, {recordId: '$recordId', fields:[NAME_FIELD, OWNER_NAME_FIELD, ANNUAL_REVENUE_FIELD]})
     //Layout wire mode-returns all the fields available in the layout when you check the console, got with fields type if you just need a few fields
     // @wire(getRecord, {recordId: '$recordId', layoutTypes:['Full'], modes:['View']})
+    // accountHandler({data}){
+    //     if(data){
+    //         console.log(data)
+    //         //To avoid this complexity we use getFieldValue adapter
+    //         this.name = getFieldValue(data, NAME_FIELD)
+    //         this.AnnualRevenue = getFieldValue(data, ANNUAL_REVENUE_FIELD)
+    //         this.owner = getFieldValue(data, OWNER_NAME_FIELD)
+    // }
+    //getFieldValue adapter does not format fields that need to be formatter like number
     accountHandler({data}){
         if(data){
             console.log(data)
             //To avoid this complexity we use getFieldValue adapter
             this.name = getFieldValue(data, NAME_FIELD)
-            this.AnnualRevenue = getFieldValue(data, ANNUAL_REVENUE_FIELD)
+            this.AnnualRevenue = getFieldDisplayValue(data, ANNUAL_REVENUE_FIELD)
             this.owner = getFieldValue(data, OWNER_NAME_FIELD)
     }
-
     // accountHandler({data}){
         // if(data){
         //     console.log(data)
