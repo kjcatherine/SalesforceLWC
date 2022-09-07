@@ -1,10 +1,24 @@
 <template>
     <lightning-card title="getListUi Adapter Demo">
         <div class="slds-p-around_medium">
-            Lists comes here
-            <!-- <div>Name - {name}</div>
-            <div>Owner - {owner}</div>
-            <div>AnnualRevenue - {AnnualRevenue}</div> -->
+            <table class="slds-table slads-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contacts} for:item="contact">
+                        <tr key={contact.fields.Id.value}>
+                            <td>{contact.fields.Name.value}</td>
+                            <td>{contact.fields.Email.value}</td>
+                            <td>{contact.fields.Title.value}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
         </div>
          <!--We will place this componet in the record page by editing a record builder  -->
     </lightning-card>
