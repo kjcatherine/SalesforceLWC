@@ -4,7 +4,11 @@ import CONTACT_OBJECT from '@salesforce/schema/Contact'
 
 export default class GetListUiDemo extends LightningElement {
     contacts =[]
-    @wire(getListUi, {objectApiName: CONTACT_OBJECT, listViewApiName: 'AllContacts'})
+    @wire(getListUi, {
+        objectApiName: CONTACT_OBJECT, 
+        listViewApiName: 'AllContacts',
+        pageSize:10
+    })
     listViewHandler({data, error}){
         if(data){
             console.log(data) 
