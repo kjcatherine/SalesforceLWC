@@ -1,7 +1,7 @@
 import { LightningElement, wire } from 'lwc';
-import {getNavItem} from 'lightning/uiAppsApi'
+import {getNavItems} from 'lightning/uiAppsApi'
 export default class GetNavItemsDemo extends LightningElement {
-    @wire(getNavItem, {
+    @wire(getNavItems, {
         pageSize:30
     })
     navItemsHandler({data}){
