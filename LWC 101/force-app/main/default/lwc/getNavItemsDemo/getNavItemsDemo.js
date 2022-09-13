@@ -1,6 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 import {getNavItems} from 'lightning/uiAppsApi'
 export default class GetNavItemsDemo extends LightningElement {
+    result
     @wire(getNavItems, {
         //specify this to not get all the nav items, from developer name in console data
         navItemNames:['standard-Account'], 
@@ -9,6 +10,7 @@ export default class GetNavItemsDemo extends LightningElement {
     navItemsHandler({data}){
         if(data){
             console.log(data)
+            this.result = data.navItems[0]
         }
     }
 }
