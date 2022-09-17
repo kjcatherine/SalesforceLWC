@@ -1,13 +1,13 @@
 <template>
     <lightning-card title="Create record form Demo">
         <div class="slds-p-around_medium">
-            <form>
-                <lightning-input label="First Name" name="FirstName" onchange={chnageHandler} class="slds-m-bottom_x-small"></lightning-input>
-                <lightning-input label="Last Name" name="LastName" onchange={chnageHandler} class="slds-m-bottom_x-small"></lightning-input>
-                <lightning-input label="Title" name="Title" onchange={chnageHandler} class="slds-m-bottom_x-small"></lightning-input>
-                <lightning-input type="tel" label="Phone" name="Phone" onchange={chnageHandler} class="slds-m-bottom_x-small"></lightning-input>
-                <lightning-input type="email" label="Email name="Email" onchange={chnageHandler} class="slds-m-bottom_x-small"></lightning-input>
-                <lightning-button label="Create Account" variant="brand" onclick={createContact}></lightning-button>
+            <form class="createForm">
+                <lightning-input label="First Name" name="FirstName" onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-input label="Last Name" name="LastName" onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-input label="Title" name="Title" onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-input type="tel" label="Phone" name="Phone" onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-input type="email" label="Email name="Email" onchange={changeHandler} class="slds-m-bottom_x-small"></lightning-input>
+                <lightning-button label="Create Account" variant="brand" onclick={}></lightning-button>
 
             </form>
         </div>
