@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 import {createRecord} from 'lightning/uiRecordApi'
 import CONTACT_OBJECT from '@salesforce/schema/Contact'
-import {showToastEvent} from 'lightning/platformShowToastEvent'
+import {showToastEvent} from 'lightning/platformShowToastEvent';
 export default class CreateRecordDemo extends LightningElement {
     formFields={}
     changeHandler(event){
@@ -10,12 +10,12 @@ export default class CreateRecordDemo extends LightningElement {
     }
 
     createContact(){
-        const recordInput ={apiName:CONTACT_OBJECT, fields:this.formFields}
+        const recordInput ={apiName:CONTACT_OBJECT.objectApiName, fields:this.formFields}
         createRecord(recordInput)
         .then(result=>{
             this.showToast('Sucess!!!', `Contact created with Id ${result.id}`, 'sucess')
             //Resets form
-            this.template.querySelector('createForm').reset()
+            this.template.querySelector('form.createForm').reset()
             this.formFields={}
         }).catch(error=>{ 
             this.showToast('Error Creating Record', error.body.message, 'error')
