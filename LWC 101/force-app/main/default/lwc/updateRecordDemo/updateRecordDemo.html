@@ -1,7 +1,14 @@
 <template>
     <lightning-card title="Create record form Demo">
         <div class="slds-p-around_medium">
-            
+            <lightning-datatable
+                key-field="id"
+                data={contacts}
+                columns={columns}
+                draft-values={draftValues}
+                onsave={handleSave}
+                hide-checkbox-column>
+            </lightning-datatable>
         </div>
     </lightning-card>
 </template>
