@@ -11,6 +11,7 @@ const COLS =[
 ]
 export default class UpdateRecordDemo extends LightningElement {
     contacts=[]
+    draftValues=[]
     columns = COLS
     @wire(getListUi, {
         objectApiName: CONTACT_OBJECT,
@@ -36,5 +37,8 @@ export default class UpdateRecordDemo extends LightningElement {
     }
     getValue(data, field){
         return data.fields[field].value
+    }
+    handleSave(event){
+        console.log(event.detail)
     }
 }
