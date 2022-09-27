@@ -39,6 +39,6 @@ export default class UpdateRecordDemo extends LightningElement {
         return data.fields[field].value
     }
     handleSave(event){
-        console.log(event.detail)
+        console.log(JSON.stringify(event.detail.draftValues))
     }
 }
