@@ -1,5 +1,6 @@
 import { LightningElement,wire } from 'lwc';
 import {getListUi} from 'lightning/uiListApi'
+import {updateRecord} from 'lightning/uiRecordApi'
 import CONTACT_OBJECT from '@salesforce/schema/Contact'
 //Always define constants above the class or within a function
 const COLS =[
@@ -40,5 +41,17 @@ export default class UpdateRecordDemo extends LightningElement {
     }
     handleSave(event){
         console.log(JSON.stringify(event.detail.draftValues))
+        const recordInputs=event.detail.draftValues.map(draft=>{
+            const fields ={...draft}
+            //fields ={"Phone":"(785) 241-62789","id":"row-0"} //got this from console
+            return {fields:fields}
+        })
+        const promises = recordInputs.map(recordInput=>updateRecord(recordInput))
+        Promise.all(promises).then(()=>{
+            console.log('Contact updated successfully')
+        }).catch(error=>{
+            console.error("Error updating the record", error)
+        })
+        
     }
 }
