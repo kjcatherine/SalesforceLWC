@@ -48,7 +48,8 @@ export default class UpdateRecordDemo extends LightningElement {
         })
         const promises = recordInputs.map(recordInput=>updateRecord(recordInput))
         Promise.all(promises).then(()=>{
-            console.log('Contact updated successfully')
+
+            //clears the values in yellow and removes the buttons
             this.draftValues=[]
         }).catch(error=>{
             console.error("Error updating the record", error)
