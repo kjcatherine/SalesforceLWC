@@ -11,7 +11,9 @@ export default class ApexWireDemo extends LightningElement {
         if(data){
             this.accountList = data.map(item=>{
                 let newType = item.Type === 'Customer - Channel' ? 'Channel' : 
-                item.Type === 'Customer - Direct' ? 'Direct' : '-------'
+                //item.Type === 'Customer - Direct' ? 'Direct' : '-------'
+                item.Type === 'Customer - Direct' ? 'Direct' :
+                item.Type === '' ? 'Prospect' : '----'
                 return {...item, newType}
             })
         }
