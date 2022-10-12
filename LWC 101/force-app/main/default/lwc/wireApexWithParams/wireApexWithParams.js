@@ -5,6 +5,7 @@ export default class WireApexWithParams extends LightningElement {
     @wire(filterAccountTypeType, {type:'$selectedType'})
     filteredAccounts
 
+    //for combobox
     get typeOptions(){
         return [
             {label:"Customer - Channel", value:"Customer - Channel"},
