@@ -1,16 +1,19 @@
 <template>
-    <lightning-card title="Apex Imperative Demo">
+    <lightning-card title="Apex Imperative With PArams Demo">
         <div class="slds-var-p-around_medium">
-            <lightning-button 
-            variant="brand" 
-            label="Call Account Method"
-            onclick={handleClick}></lightning-button>
+            <lightning-input
+            type="search"
+            onchange={searchHandler}
+            label="Search Account"
+            value={searchKey}
+            ></lightning-input>
         </div>
-
         <template if:true={accounts}>
             <template for:each={accounts} for:item="account">
                 <div class="slds-box slds-box_xx-small" key={accounts.Id}>
                     <p>Name - {account.Name}</p>
+                    <p>Type - {account.Type}</p>
+                    <p>Industry - {account.Industry}</p>
                 </div>
             </template>
         </template>
