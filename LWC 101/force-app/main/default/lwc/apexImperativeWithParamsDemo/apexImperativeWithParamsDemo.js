@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import findAccount from '@salesforce/apex/AccountController.findAccount'
+import findAccounts from '@salesforce/apex/AccountController.findAccounts'
 export default class ApexImperativeWithParamsDemo extends LightningElement {
     searchKey = ''
     accounts
@@ -15,14 +15,14 @@ export default class ApexImperativeWithParamsDemo extends LightningElement {
         // for the Debouncing impelementation
         this.timer = setTimeout(()=>{
             this.callApex()
-        },1000)
+        }, 1000)
     }
     //Debouncing technique
     callApex(){
-        findAccount({searchKey:this.searchKey}).then(result=>{
+        findAccounts({searchKey:this.searchKey}).then(result=>{
             this.accounts = result
         }).catch(error=>{
-            console.error(error)
+            console.error("Call Apex Error here" + error)
         })
     }
 }
