@@ -5,9 +5,9 @@ export default class ApexImperativeWithParamsDemo extends LightningElement {
     accounts
     timer
     searchHandler(event){
-        Window.clearTimeout(this.timer)
+        window.clearTimeout(this.timer)
         this.searchKey = event.target.value
-        // findAccount({searchKey:this.searchKey}).then(result=>{
+        // findAccounts({searchKey:this.searchKey}).then(result=>{
         //     this.accounts = result
         // }).catch(error=>{
         //     console.error(error)
@@ -15,7 +15,7 @@ export default class ApexImperativeWithParamsDemo extends LightningElement {
         // for the Debouncing impelementation
         this.timer = setTimeout(()=>{
             this.callApex()
-        }, 1000)
+        }, 2000)
     }
     //Debouncing technique
     callApex(){
