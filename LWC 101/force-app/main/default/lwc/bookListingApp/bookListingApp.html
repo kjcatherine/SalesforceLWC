@@ -1,7 +1,7 @@
 <template>
     <lightning-card>
-        <div class="slds-var-p-around_medium">
-                <lightning-layout>
+        <div class="slds-p-around_medium">
+                <lightning-layout multiple-rows>
                     <template if:true={books}>
                         <template for:each={books.items} for:item="book">
                             <lightning-layout-item size="3" padding="around-small" key={book.Id}>
