@@ -3,6 +3,7 @@ const BOOK_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 export default class BookListingApp extends LightningElement {
     query='Man'
     books
+    timer
     //Call api on the load of the component so we have to use connecteCallBack
     connectedCallback(){
         this.fetchBookData()
@@ -15,5 +16,12 @@ export default class BookListingApp extends LightningElement {
             this.books = data
         })
         .catch(error=>console.error(error))
+    }
+    fetchBooksHandler(event){
+        this.query= event.target.value
+        window.clearTimeout(this.timer)
+        this.timer = setTimeout(()=>{
+            this.fetchBookData()
+        }, 1000)
     }
 }

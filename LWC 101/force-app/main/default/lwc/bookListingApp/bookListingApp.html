@@ -1,7 +1,14 @@
 <template>
     <lightning-card>
         <div class="slds-p-around_medium">
-                <lightning-layout multiple-rows>
+            <div class="slds-p-around_medium">
+                <lightning-input type="search"
+                onchange={fetchBooksHandler}
+                label="Search Books"
+                value={query}
+                ></lightning-input>
+            </div>
+            <lightning-layout multiple-rows>
                     <template if:true={books}>
                         <template for:each={books.items} for:item="book">
                             <lightning-layout-item size="3" padding="around-small" key={book.Id}>
@@ -14,8 +21,7 @@
                             </lightning-layout-item>
                         </template>
                     </template>
-                </lightning-layout>
-        
+            </lightning-layout>
         </div>
     </lightning-card>
 </template>
