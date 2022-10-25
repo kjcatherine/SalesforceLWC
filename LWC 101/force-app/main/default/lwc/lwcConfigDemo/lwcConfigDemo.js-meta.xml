@@ -9,4 +9,18 @@
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target> 
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="recordId" type="String" />
+            <property name="heading" type="String" default="Meta Config in LWC" />
+            <objects>
+                <object>Account</object>
+            </objects>
+        </targetConfig>
+        <targetConfig targets="lightning__AppPage">
+            <property name="heading" type="String" default="Meta Config in LWC" />
+            <property name="age" type="Integer" min="5" max="10" default="7" />
+            <property name="levels" label="Level" type="String" datasource="High, Medium, Low" default="High"/>
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
