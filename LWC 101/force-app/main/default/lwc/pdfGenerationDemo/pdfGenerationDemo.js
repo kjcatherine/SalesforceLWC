@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class PdfGenerationDemo extends LightningElement {
-    imageUrl ='https://www.sparksuite.com/images/logo.png'
+    imageUrl ='https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/atjl323lqdcdeizyxbnk'
     invoiceData={
         invoiceNo: '123',
         invoiceCreated: 'May 1 2023',
@@ -24,5 +24,9 @@ export default class PdfGenerationDemo extends LightningElement {
         return this.services.reduce((total, service)=>{
             return total = total+service.amount
         }, 0)
+    }
+    pdfHandler(){
+        let content = this.template.querySelector('.container')
+        console.log(content.outerHTML)
     }
 }
