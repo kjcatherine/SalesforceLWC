@@ -1,5 +1,9 @@
 <template>
     <div class="slds-box">
-        Map comes here
+        <lightning-map 
+        map-markers={mapMarkers}
+        markers-title=""
+        onmarkerselect={callMarkerHandler}
+        selected-marker-value={selectedMarkerValue}>
     </div>
 </template>
