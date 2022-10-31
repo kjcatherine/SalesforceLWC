@@ -1,6 +1,7 @@
-import { LightningElement } from 'lwc';
-
+import { LightningElement, api } from 'lwc';
+import generatePDF from '@salesforce/apex/pdfController'
 export default class PdfGenerationDemo extends LightningElement {
+    @api recordId
     imageUrl ='https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/atjl323lqdcdeizyxbnk'
     invoiceData={
         invoiceNo: '123',
@@ -28,5 +29,10 @@ export default class PdfGenerationDemo extends LightningElement {
     pdfHandler(){
         let content = this.template.querySelector('.container')
         console.log(content.outerHTML)
+        generatePDF({recordId:this.recordId, htmlData:content.outerHTML}).then(result=>{
+            console.log("attachment id", result)
+        }).catch(error=>{
+            console.error(error)
+        })
     }
 }
