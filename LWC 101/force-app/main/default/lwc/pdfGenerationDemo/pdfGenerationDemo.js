@@ -31,6 +31,9 @@ export default class PdfGenerationDemo extends LightningElement {
         console.log(content.outerHTML)
         generatePDF({recordId:this.recordId, htmlData:content.outerHTML}).then(result=>{
             console.log("attachment id", result)
+            //Right now we have to open the pdf from notes and attachment section
+            //We want it to open at the click of the btn instead, this url is from the open pdf
+            window.open(`https://ruby-energy-7103-dev-ed.scratch.file.force.com/servlet/servlet.FileDownload?file=${result.Id}`)
         }).catch(error=>{
             console.error(error)
         })
