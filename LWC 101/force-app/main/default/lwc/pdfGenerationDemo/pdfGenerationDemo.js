@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-import generatePDF from '@salesforce/apex/pdfController'
+import generatePDF from '@salesforce/apex/pdfController.generatePDF'
 export default class PdfGenerationDemo extends LightningElement {
     @api recordId
     imageUrl ='https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/atjl323lqdcdeizyxbnk'
