@@ -12,7 +12,7 @@ export default class Internationalization extends LightningElement {
 //     }).format(this.number)
 formattedNumber = new Intl.NumberFormat('ar-EG', {
     style:'currency',
-    currency:USD,
+    currency:'USD',
     currencyDisplay: 'symbol'
 }).format(this.number)
 }
