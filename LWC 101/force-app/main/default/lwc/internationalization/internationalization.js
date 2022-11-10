@@ -5,7 +5,7 @@ import CURRENCY from '@salesforce/i18n/currency';
 import DIR from '@salesforce/i18n/dir';
 export default class Internationalization extends LightningElement {
     number = 34564567.8
-    dir = DIR
+    dir = 'rtl'//DIR
 //     formattedNumber = new Intl.NumberFormat(LOCALE, {
 //         style: 'currency',
 //         currency: CURRENCY,
