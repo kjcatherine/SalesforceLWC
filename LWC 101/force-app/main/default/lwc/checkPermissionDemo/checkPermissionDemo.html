@@ -9,4 +9,15 @@
        </template>
         </div>
     </lightning-card>
+
+    <lightning-card title="Custom Permission Demo">
+        <div class="slds-m-around_medium">
+           <template if:true={hasCustomPermission}>
+                <p>Hurray! I have a custom permission</p>
+           </template>
+           <template if:false={hasCustomPermission}>
+            <p>Ops! I dont have a custom permission</p>
+       </template>
+        </div>
+    </lightning-card>
 </template>
