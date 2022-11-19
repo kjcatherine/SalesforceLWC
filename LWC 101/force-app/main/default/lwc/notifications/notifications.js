@@ -9,4 +9,13 @@ export default class Notifications extends LightningElement {
         })
         this.dispatchEvent(evt)
     }
+toastHandlerTwo(){
+    const evt = new ShowToastEvent({
+        title:'Error!!',
+        message:'Account Creation failed',
+        variant:'error'
+    })
+    this.dispatchEvent(evt)
+}
+    
 }
