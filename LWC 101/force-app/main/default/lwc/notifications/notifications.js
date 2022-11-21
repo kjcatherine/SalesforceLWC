@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 import {ShowToastEvent} from'lightning/platformShowToastEvent'
 export default class Notifications extends LightningElement {
     toastHandler(){
-        this.showToast('Success!!', 'Account Created','success')
+        this.showToast('Success!!', '{0} Account Created {1}','success')
     //   const evt = new ShowToastEvent({
     //         title:'Success!!',
     //         message:'Account Created',
@@ -33,7 +33,14 @@ showToast(title, message, variant){
     const evt = new ShowToastEvent({
         title,
         message,
-        variant
+        variant,
+        //optionally, embed text and url in message
+        messageData:[
+            'Salesforce',{
+                url: 'https://www.salesforce.com',
+                label: 'Click here'
+            }
+        ]
     })
     this.dispatchEvent(evt)
 }
