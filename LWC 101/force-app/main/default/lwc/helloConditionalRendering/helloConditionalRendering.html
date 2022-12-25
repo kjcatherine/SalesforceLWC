@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Conditional rendering">
+        <div class="slds-var-m-around_medium">
+            <lightning-button 
+            variant="brand" 
+            label="Show Data" 
+            title="Show Data" 
+            onclick={handleClick} 
+            class="slds-var-m-left_x-small"></lightning-button>
+
+            <!-- demoing if:true directive -->
+            <template if:true={isVisible}>
+                <div>Welcome to Zero To Hero Series</div>
+            </template>
+
+             <!-- demoing if:false directive -->
+             <template if:false={isVisible}>
+                <div>You can't see the data please click the button</div>
+            </template>
+
+            <!-- demoing how the getter in js gets a value from input and also uses the getter in JS -->
+            <lightning-input type="text" label="Type hello to see the data"
+            onkeyup={changeHandler}></lightning-input>
+
+            <template if:true={helloMethod}>
+                <div>Hurray! you have typed correctly</div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

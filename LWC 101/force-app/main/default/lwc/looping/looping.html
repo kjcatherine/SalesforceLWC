@@ -1,0 +1,57 @@
+<template>
+    <lightning-card title="for:each loop">
+        <div class="slds-var-m-around_medium">
+            <template for:each={carList} for:item="car">
+                <!-- key is very important for performance -->
+                <!-- <div key={car}>{car}</div> -->
+                <!-- we got this slds design by searching for vertical list -->
+                <ul key={car} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{car}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+<!-- only differnece is that in array of objects you use dot notations to get the values -->
+    <lightning-card title="for:each loop with array of objects">
+        <div class="slds-var-m-around_medium">
+            <template for:each={ceoList} for:item="list">
+                <ul key={list.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{list.name} {list.company}</li>
+                  </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+
+
+    <lightning-card title="iterator loop">
+        <div class="slds-var-m-around_medium">
+            <template iterator:ceo={ceoList}>
+                <!-- any of the keys can be used not just id, {ceo.value.id} is also valid -->
+                <div key={ceo.value.id}> 
+                    <ul class="slds-has-dividers_around-space">
+                        <!-- adding directives to the first element -->
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of Companies and thier CEOs</strong>
+                            </div>
+                        </template>
+
+                        <li class="slds-item">
+                            <strong>{ceo.value.company} </strong> {ceo.value.name}
+                        </li>
+
+                        <!-- adding directives to the last element -->
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>Thanks for reading the list</strong>
+                            </div>
+                        </template>
+                      </ul>
+                </div>
+               
+            </template>
+        </div>
+    </lightning-card>
+</template>
