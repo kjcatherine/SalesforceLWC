@@ -15,5 +15,10 @@ export default class HelloQuerySelectorDemo extends LightningElement {
             console.log(item.innerText)
             item.setAttribute("title", item.innerText)
         })
+
+        // lwc:dom="manual" demo
+        const childElem = this.template.querySelector('.child')
+        //innerHTML is used to append the child within a tag
+        childElem.innerHTML = '<p>Hey, I am a child</p>';
     }
 }
