@@ -2,4 +2,8 @@
 .css{
     width:80%;
     background-color: #2196f2;
+    border-radius: 10px;
+}
+.abc{
+    color: red;
 }
