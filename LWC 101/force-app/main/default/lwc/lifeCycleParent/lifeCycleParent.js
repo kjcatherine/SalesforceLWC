@@ -10,4 +10,7 @@ export default class LifeCycleParent extends LightningElement {
         // when you want to attach a listener at a parent level, above works
         // though we rarely implement this
     }
+    connectedCallback(){
+        console.log('Parent connectedCallback called')
+    }
 }
