@@ -1,6 +1,8 @@
 import { LightningElement } from 'lwc';
 
 export default class LifeCycleParent extends LightningElement {
+
+    //the 3 mounting phase hooks
     constructor(){
         super();
         console.log("parent constructor called")
@@ -11,6 +13,9 @@ export default class LifeCycleParent extends LightningElement {
         // though we rarely implement this
     }
     connectedCallback(){
-        console.log('Parent connectedCallback called')
+        console.log('Parent connectedCallback called') //notice that constructor gets called firt and this second
+    }
+    renderedCallback(){
+        console.log('Parent renderedCallback called')
     }
 }
