@@ -1,6 +1,10 @@
 <template>
     <lightning-card title="Lifecycle hook parent card">
         <div class="slds-var-m-around_medium">
+            <!-- we adding an new input tag to demonstrate performance issues of renderedcallback -->
+            <!-- renderedCalledback gets called everytime something changes in the component -->
+            <input type="text" onkeyup={changeHandler}/>
+            {name}
             <c-life-cycle-child></c-life-cycle-child>
         </div>
     </lightning-card>
