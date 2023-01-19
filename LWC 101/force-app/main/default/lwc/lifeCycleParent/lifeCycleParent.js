@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class LifeCycleParent extends LightningElement {
-
+    isChildVisible = false;
     //the 3 mounting phase hooks
     constructor(){
         super();
@@ -18,8 +18,12 @@ export default class LifeCycleParent extends LightningElement {
     renderedCallback(){
         console.log('Parent renderedCallback called')
     }
-    name;
-    changeHandler(event){
-        this.name = event.target.value;
+    // name;
+    // changeHandler(event){
+    //     this.name = event.target.value;
+    // }
+    handleClick(){
+        //toggle it
+        this.isChildVisible = !this.isChildVisible;
     }
 }

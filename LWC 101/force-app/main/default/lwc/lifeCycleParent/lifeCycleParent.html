@@ -3,9 +3,32 @@
         <div class="slds-var-m-around_medium">
             <!-- we adding an new input tag to demonstrate performance issues of renderedcallback -->
             <!-- renderedCalledback gets called everytime something changes in the component -->
-            <input type="text" onkeyup={changeHandler}/>
-            {name}
-            <c-life-cycle-child></c-life-cycle-child>
+            <!-- <input type="text" onkeyup={changeHandler}/>
+            {name} -->
+            <!-- To demonstrate disconnedCallback, we want to chnage child component onclick
+            of a button, and also remove it -->
+            <template if:true={isChildVisible}>
+            <lightning-button 
+            variant="brand"
+            label="Remove Child"
+            title="Remove Child"
+            onclick={handleClick}
+            class="slds-var-m-left_x-small"></lightning-button>
+            </template>
+
+            <template if:false={isChildVisible}>
+            <lightning-button 
+            variant="brand"
+            label="Show Child"
+            title="Show Child"
+            onclick={handleClick}
+            class="slds-m-left_x-small"></lightning-button>
+            </template>
+            
+            <template if:true={isChildVisible}>
+                <c-life-cycle-child></c-life-cycle-child>
+            </template>
+            
         </div>
     </lightning-card>
 </template>
