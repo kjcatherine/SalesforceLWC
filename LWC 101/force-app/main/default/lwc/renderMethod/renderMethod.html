@@ -1,3 +1,20 @@
 <template>
-    <h1>Hey I am default template</h1>
+    <lightning-card title="Render multiple template" icon-name="custom:custom14">
+        <div class="slds-var-m-around_medium">
+            <h2 class="slds-text-heading_medium slds-var-m-buttom_medium">Choose your options</h2>
+            <lightning-button 
+            variant="desctructive"
+            label="Signup"
+            title="Signup"
+            onclick={handleClick}
+            class="slds-var-m-left_x-small"></lightning-button>
+
+            <lightning-button 
+            variant="success"
+            label="Signin"
+            title="Signin"
+            onclick={handleClick}
+            class="slds-var-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
 </template>
