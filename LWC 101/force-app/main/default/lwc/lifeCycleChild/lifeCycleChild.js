@@ -6,7 +6,7 @@ export default class LifeCycleChild extends LightningElement {
         super();
         console.log("child constructor called")
     }
-    interval
+    //interval;
     connectedCallback(){
         console.log('child connectedCallback called') //notice that constructor 
         //gets called first and this second
