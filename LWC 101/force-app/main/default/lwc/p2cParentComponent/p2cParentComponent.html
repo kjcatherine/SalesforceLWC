@@ -1,7 +1,10 @@
 <template>
     <c-p2c-alert-component>
+        <!-- This doesnt work for some reason, i've asked the question -->
+        <!-- Solved: i had the roperties in parent js instead of the child, fixed -->
         message="Hurray!! I got the data"
-        <!-- This card-heading doesnt work for some reason, ive asked the question -->
         card-heading="Parent to Child primitive data communication"
+        number=20
+        is-valid=false
     </c-p2c-alert-component>
 </template>
