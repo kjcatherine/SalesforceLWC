@@ -1,10 +1,12 @@
 <template>
-    <c-p2c-alert-component>
-        <!-- This doesnt work for some reason, i've asked the question -->
-        <!-- Solved: i had the roperties in parent js instead of the child, fixed -->
-        message="Hurray!! I got the data"
-        card-heading="Parent to Child primitive data communication"
-        number=20
-        is-valid=false
-    </c-p2c-alert-component>
+    <c-p2c-alert-component
+    message="Hurray !! I got the data"
+    card-heading="Parent to Child primitive data communication"
+    number=20
+    is-valid
+    ></c-p2c-alert-component>
+
+    <div class="slds-var-m-top_medium">
+        <c-p2c-carousel-component></c-p2c-carousel-component>
+    </div>
 </template>
