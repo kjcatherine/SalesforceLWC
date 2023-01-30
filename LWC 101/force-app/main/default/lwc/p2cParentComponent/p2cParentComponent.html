@@ -1,12 +1,22 @@
 <template>
+    <!-- Primitive parent to child -->
     <c-p2c-alert-component
     message="Hurray !! I got the data"
     card-heading="Parent to Child primitive data communication"
     number=20
     is-valid
     ></c-p2c-alert-component>
-
-    <div class="slds-var-m-top_medium">
+    
+    <!-- Non-primitive parent to child -->
+    <div class="slds-var-m-bottom_medium"></div>
         <c-p2c-carousel-component carousel-details={carouselData}></c-p2c-carousel-component>
-    </div>
+
+    <!-- Data passing on action -->
+    <div class="slds-var-m-bottom_medium"></div>
+    <lightning-card title="Parent to Child Non-primitive data communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" label="Enter Percentage"></lightning-input>
+            <c-p2c-progress-component></c-p2c-progress-component>
+        </div>
+    </lightning-card>
 </template>

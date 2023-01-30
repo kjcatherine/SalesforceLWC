@@ -2,7 +2,7 @@ import { LightningElement, api } from 'lwc';
 
 export default class P2cParentComponent extends LightningElement {
 
-    //Create courousel data
+    //Non-primitive parent to child- Create courousel data
     carouselData=[
         {
             src:"https://www.lightningdesignsystem.com/assets/images/carousel/carousel-01.jpg",
