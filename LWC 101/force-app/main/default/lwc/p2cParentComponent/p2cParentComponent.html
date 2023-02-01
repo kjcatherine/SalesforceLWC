@@ -11,21 +11,22 @@
     <div class="slds-var-m-bottom_medium"></div>
         <c-p2c-carousel-component carousel-details={carouselData}></c-p2c-carousel-component>
 
-    <!-- Data passing on action -->
+    <!---Example of data passing on action-->
     <div class="slds-var-m-bottom_medium"></div>
-    <lightning-card title="Parent to Child Non-primitive data communication">
+    <lightning-card title="Parent to Child communication on action">
         <div class="slds-var-m-around_medium">
-
-            <lightning-input type="number" 
-            label="Enter Percentage"
-            onkeyup={changeHandler}
-            value={percentage}>
-            </lightning-input>
-
-            <c-p2c-progress-component>
-                progress-value={percentage}
-            </c-p2c-progress-component>
+            <lightning-input type="number"
+             label="Enter percentage"
+             onkeyup={changeHandler}
+             value={percentage}
+             ></lightning-input>
+             
+             <c-p2c-progress-component
+             progress-value={percentage}
+             ></c-p2c-progress-component>
         </div>
-        
     </lightning-card>
+
+    <!-- example of calling child method from parent -->
+    <c-p2c-slider-component></c-p2c-slider-component>
 </template>
