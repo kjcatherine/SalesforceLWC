@@ -1,7 +1,11 @@
 <template>
     <lightning-card title="Calling Child method from Parent">
         <div class="slds-var-m-around_medium">
-            <lightning-slider label="Volume" value={val}></lightning-slider>
+            <lightning-slider 
+            label="Volume" 
+            value={val}
+            onchange={changeHandler}>
+        </lightning-slider>
         </div>
     </lightning-card>
 </template>
