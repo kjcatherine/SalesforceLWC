@@ -1,13 +1,31 @@
 <template>
-    <lightning-card title="Child to Parent communication">
+
+    <lightning-card title="Child to parent communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Show Modal" 
+            onclick={clickHandler}></lightning-button>
+
+            <template if:true={showModal}>
+                <c-c2p-modal-component 
+                onclose={closeHandler}
+                ></c-c2p-modal-component>
+            </template>
+           
+        </div>
+    </lightning-card>
+
+    <!-- <lightning-card title="Child to Parent communication">
         <div class="slds-var-m-around_medium">
 
             <lightning-button label="Show Modal" 
             onclick={clickHandler} ></lightning-button>
 
             <template if:true={showModal}>
-                <c-c2p-modal-component></c-c2p-modal-component>
+                <c-c2p-modal-component> -->
+                    <!-- we listen to the event here, we add on to the event name which is close -->
+                    <!-- onclose={closeHandler} -->
+                <!-- </c-c2p-modal-component>
             </template>
         </div>
-    </lightning-card>
+    </lightning-card> -->
 </template>
