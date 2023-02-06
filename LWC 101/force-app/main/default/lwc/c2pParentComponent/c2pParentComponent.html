@@ -5,6 +5,8 @@
             <lightning-button label="Show Modal" 
             onclick={clickHandler}></lightning-button>
 
+            <h1>{msg}</h1>
+
             <template if:true={showModal}>
                 <c-c2p-modal-component 
                 onclose={closeHandler}
