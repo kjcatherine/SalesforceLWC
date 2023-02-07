@@ -13,7 +13,7 @@ export default class C2pParentComponent extends LightningElement {
 // }
 //to receiev the detail passed from the event in child we recieve event here
 closeHandler(event){
-    this.msg = event.detail
+    this.msg = event.detail.msg
     this.showModal = false;
 }
 }
