@@ -8,12 +8,16 @@ export default class C2pModalComponent extends LightningElement {
         
         //we can also pass complex data as detail
         const myEvent = new CustomEvent('close', {
+            bubbles:true,
             detail:{
                 msg: "Modal closed successfully"
             }
         }) 
 
         this.dispatchEvent(myEvent)
+    }
+    footerHandler(){
+        console.log('footer event called')
     }
 
 
