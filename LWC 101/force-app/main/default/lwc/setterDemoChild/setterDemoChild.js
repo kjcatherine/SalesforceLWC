@@ -10,6 +10,7 @@ export default class SetterDemoChild extends LightningElement {
    }
    set detail(data){
         let newAge = data.age*2
-        this.userDetail = {...data, age:newAge}
+        //location is not originally part of the object, is that why its in quotes?
+        this.userDetail = {...data, age:newAge, "location":"Africa"}
    }
 }
