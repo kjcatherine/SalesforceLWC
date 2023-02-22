@@ -7,7 +7,11 @@
     <div>What is your Age</div>
     <div><slot name="second"></slot></div>
     
-    <footer class="slds-card__footer">
+    <!-- <footer class="slds-card__footer">
         <slot name="footer"></slot>
+    </footer> -->
+    <!-- To make this footer line not show in the second child display -->
+    <footer class="slds-card__footer slds-hide">
+        <slot name="footer" onslotchange={handleFooterChange}></slot>
     </footer>
 </template>
