@@ -1,0 +1,7 @@
+/* A child component reaching oout to style its own component
+this :host just indicates the host is styling itself */
+:host{
+    display: block;
+    background-color: red;
+    color: white;
+}

@@ -2,8 +2,9 @@ h1{
     font-size: 30px;
     color: red;
 }
-c-css-child-demo{
+/* A host parent component styling its host component */
+/* c-css-child-demo{
     display: block;
     background-color: green;
     color: white;
-}
+} */
