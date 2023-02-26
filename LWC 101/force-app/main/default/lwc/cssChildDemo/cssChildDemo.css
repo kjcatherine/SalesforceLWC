@@ -5,3 +5,9 @@ this :host just indicates the host is styling itself */
     background-color: red;
     color: white;
 }
+/* If we have the host displayed twice we can give the second one a class */
+:host(.blue){
+    display: block;
+    background-color: blue;
+    color: white;
+}
