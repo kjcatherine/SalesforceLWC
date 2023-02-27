@@ -11,3 +11,7 @@ this :host just indicates the host is styling itself */
     background-color: blue;
     color: white;
 }
+p{
+    font-size: 20px;
+    color: yellow;
+}

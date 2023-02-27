@@ -3,8 +3,12 @@
         <div class="slds-p-around_medium">
             <h1>hello I am parent component</h1>
             <!-- child passed here is called an host element -->
-            <c-css-child-demo></c-css-child-demo> 
-            <c-css-child-demo class="blue"></c-css-child-demo> 
+            <c-css-child-demo>
+                <P>Hello I am slot 1</P>
+            </c-css-child-demo> 
+            <c-css-child-demo class="blue">
+                <P>Hello I am slot 2</P>
+            </c-css-child-demo> 
         </div>
     </lightning-card>
 </template>
