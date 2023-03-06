@@ -1,5 +1,6 @@
 <template>
     <article class="slds-card">
+        <!-- Header -->
         <div class="slds-card__header slds-grid">
             <header class="slds-media slds-media_center slds-has-flexi-truncate">
                 <!-- <div class="slds-media__figure">
@@ -14,22 +15,25 @@
                         </a> -->
                         <!-- wre converted thus a tag into a div -->
                         <div class="slds-card__header-link slds-truncate">
-                            Header will come here
+                            <!-- Header will come here -->
+                            <slot name="title"></slot>
                         </div>
                     </h2>
                 </div>
                 <div class="slds-no-flex">
-                    <button class="slds-button slds-button_neutral">Btn Action</button>
+                    <!-- <button class="slds-button slds-button_neutral">Btn Action</button> -->
+                    <slot name="actions"></slot>
                 </div>
             </header>
         </div>
             <!-- we added body and footer here that wasnt part of the card slds code 
                 we copied, these are gotten when we check the card component in slds library and search for both header and footer codes -->
             <div class="slds-card__body">
-                Body comes here
+                <!-- any unamed slot will come here -->
+                <slot></slot>
             </div>
             <footer class="slds-card__footer">
-                Footer comes here
+                <slot name="footer"></slot>
             </footer>
         
     </article>
