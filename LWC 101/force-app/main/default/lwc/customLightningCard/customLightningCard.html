@@ -32,8 +32,8 @@
                 <!-- any unamed slot will come here -->
                 <slot></slot>
             </div>
-            <footer class="slds-card__footer">
-                <slot name="footer"></slot>
+            <footer class="slds-card__footer slds-hide">
+                <slot name="footer" onslotchange={handleSlotFooterChange}></slot>
             </footer>
         
     </article>
