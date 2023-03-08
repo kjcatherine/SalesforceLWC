@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- notice we use columns here  -->
+    <lightning:card title="Aura to LWC Communication">
+        <div class="slds-m-around_medium">
+            <!-- we maintain camelcase here -->
+            <c:lwcAuraCommunication></c:lwcAuraCommunication>
+        </div>
+    </lightning:card>
+</aura:component>	
