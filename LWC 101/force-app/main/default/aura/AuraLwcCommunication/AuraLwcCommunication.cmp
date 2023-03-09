@@ -3,7 +3,7 @@
     <lightning:card title="Aura to LWC Communication">
         <div class="slds-m-around_medium">
             <!-- we maintain camelcase here -->
-            <c:lwcAuraCommunication></c:lwcAuraCommunication>
+            <c:lwcAuraCommunication title="Hello message from Aura"></c:lwcAuraCommunication>
         </div>
     </lightning:card>
 </aura:component>	
