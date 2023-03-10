@@ -1,9 +1,21 @@
 <aura:component implements="flexipage:availableForAllPageTypes">
+<!-- we need this in order to be able to display msg coming from controller -->
+<aura:attribute name="message" type="string"/>
     <!-- notice we use columns here  -->
     <lightning:card title="Aura to LWC Communication">
+
+        <div class="slds-m-around_medium">
+            <div>{v.message}</div>
+        </div>
+
         <div class="slds-m-around_medium">
             <!-- we maintain camelcase here -->
-            <c:lwcAuraCommunication title="Hello message from Aura"></c:lwcAuraCommunication>
+            <!-- Aura passing a message to lwc comp. calling a function is different here
+            we have quotes around the curly bracec, c is controller and bang before it -->
+            <c:lwcAuraCommunication 
+            title="Hello message from Aura"
+            onsendmsg="{!c.handleMsg}">
+            </c:lwcAuraCommunication>
         </div>
     </lightning:card>
 </aura:component>	
