@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import SAMPLEMC from "@salesforce/messageChannel/SampleMessageChannel__c"
 import { publish, MessageContext } from 'lightning/messageService';
 export default class LmsComponentA extends LightningElement {

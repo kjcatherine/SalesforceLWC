@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, wire } from 'lwc';
 import SAMPLEMC from "@salesforce/messageChannel/SampleMessageChannel__c"
 //to get the receive the data that is published by comp A
 import { subscribe, MessageContext, APPLICATION_SCOPE } from 'lightning/messageService';
