@@ -23,5 +23,10 @@
         <div class="slds-p-around_medium">
             <lightning:button onclick="{!c.publishMessage}">Publish</lightning:button>
         </div>
+
+        <div class="slds-p-around_medium">
+            <h1><strong>Message Received</strong></h1>
+            <lightning:formattedText value="{!v.messageRecieved}"/>
+        </div>
     </lightning:card>
 </aura:component>	
