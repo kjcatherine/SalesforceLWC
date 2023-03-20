@@ -42,5 +42,10 @@
           }
       }
 
+      function msgHandler(message){
+          let recievedMessage= document.getElementById("recievedMessage")
+          recievedMessage.innerHTML = message && message.lmsData ? message.lmsData.value:"No Data Send"
+      }
+
     </script>
 </apex:page>
