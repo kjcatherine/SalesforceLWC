@@ -40,7 +40,8 @@ showToast(title, message, variant){
                 url: 'https://www.salesforce.com',
                 label: 'Click here'
             }
-        ]
+        ],
+        mode:'sticky'
     })
     this.dispatchEvent(evt)
 }
