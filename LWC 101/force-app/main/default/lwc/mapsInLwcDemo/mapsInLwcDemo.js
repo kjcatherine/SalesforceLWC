@@ -3,6 +3,7 @@ import getAccounts from '@salesforce/apex/MapControllerLwc.getAccounts'
 
 export default class MapsInLwcDemo extends LightningElement {
     mapMarkers=[]
+    markersTitle="Accounts Location"
     //To load the map we need the data, and to load te data we need an apex class
     @wire(getAccounts)
     wireHandler({data, error}){
@@ -30,5 +31,9 @@ export default class MapsInLwcDemo extends LightningElement {
                 description:'item.Description'
             }
         })
+        this.selectedMarker = this.mapMarkers.length && this.mapMarkers[0].value
+    }
+    callMarkerHandler(event){
+        this.selectedMarker = event.detail.selectedMarkerValue
     }
 }
