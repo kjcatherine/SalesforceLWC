@@ -26,9 +26,9 @@ export default class MapsInLwcDemo extends LightningElement {
                     Country:item.BillingCountry || '',
                 },
                 icon:'utility:salesforce1',
-                title:'item.Name',
-                value:'item.Name',
-                description:'item.Description'
+                title:item.Name,
+                value:item.Name,
+                description:item.Description
             }
         })
         this.selectedMarker = this.mapMarkers.length && this.mapMarkers[0].value
