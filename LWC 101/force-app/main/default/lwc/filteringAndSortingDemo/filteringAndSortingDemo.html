@@ -1,7 +1,25 @@
 <template>
     <lightning-card title="Client Side Filtering Demo">
         <div class="slds-p-around_medium">
-            Table will come here
+            <table class="slds-table slads-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <template for:each={headings} for:item="heading">
+                            <th key={heading}>{heading}</th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={filteredData} for:item="data">
+                        <tr key={data.Id}>
+                            <td>{data.Id}</td>
+                            <td>{data.Name}</td>
+                            <td>{data.Title}</td>
+                            <td>{data.Email}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
         </div>
     </lightning-card>
 </template>
