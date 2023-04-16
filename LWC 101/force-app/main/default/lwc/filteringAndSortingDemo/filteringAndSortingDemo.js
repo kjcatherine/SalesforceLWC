@@ -15,4 +15,9 @@ export default class FilteringAndSortingDemo extends LightningElement {
             console.error(error)
         }
     }
+
+    filterHandler(event){
+        const {value} = event.target
+        console.log(value)
+    }
 }

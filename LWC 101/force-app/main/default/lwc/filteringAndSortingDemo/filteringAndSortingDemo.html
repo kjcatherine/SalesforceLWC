@@ -1,6 +1,14 @@
 <template>
     <lightning-card title="Client Side Filtering Demo">
         <div class="slds-p-around_medium">
+            <lightning-layout>
+                <lightning-layout-item size="4" padding="around_small">
+                    <lightning-input type="text" 
+                    label="Filter" 
+                    onkeyup={filterHandler}
+                    ></lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
             <table class="slds-table slads-table_cell-buffer slds-table_bordered">
                 <thead>
                     <tr>
@@ -15,7 +23,7 @@
                             <td>{data.Id}</td>
                             <td>{data.Name}</td>
                             <td>{data.Title}</td>
-                            <td>{data.Email}</td>
+                            <td>{data.Title}</td>
                         </tr>
                     </template>
                 </tbody>
