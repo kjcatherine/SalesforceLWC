@@ -19,5 +19,11 @@ export default class FilteringAndSortingDemo extends LightningElement {
     filterHandler(event){
         const {value} = event.target
         console.log(value)
+        this.filteredData = this.fullTableData.filter(eachobj=>{
+            //Object.keys(eachobj) = ["Id", "Name", "Title", "Email"]
+            return Object.keys(eachobj).some(key=>{
+                return eachobj[key].toLowerCase().includes(value)
+            })
+        })
     }
 }
