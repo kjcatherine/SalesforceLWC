@@ -19,11 +19,16 @@ export default class FilteringAndSortingDemo extends LightningElement {
     filterHandler(event){
         const {value} = event.target
         console.log(value)
+        if(value){
         this.filteredData = this.fullTableData.filter(eachobj=>{
             //Object.keys(eachobj) = ["Id", "Name", "Title", "Email"]
             return Object.keys(eachobj).some(key=>{
                 return eachobj[key].toLowerCase().includes(value)
             })
         })
+        }else{
+            //this check avoids an empty table when something umavailabe is typed
+            this.filteredData = [...this.fullTableData]
+        }
     }
 }
