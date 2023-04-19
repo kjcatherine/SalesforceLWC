@@ -4,6 +4,7 @@ export default class FilteringAndSortingDemo extends LightningElement {
     headings=["Id", "Name", "Title", "Email"]
     fullTableData=[]
     filteredData =[]
+    timer
     @wire(getContactList)
     contactHandler({data, error}){
         if(data){
@@ -18,17 +19,21 @@ export default class FilteringAndSortingDemo extends LightningElement {
 
     filterHandler(event){
         const {value} = event.target
-        console.log(value)
+        // console.log(value)
         if(value){
-        this.filteredData = this.fullTableData.filter(eachobj=>{
-            //Object.keys(eachobj) = ["Id", "Name", "Title", "Email"]
-            return Object.keys(eachobj).some(key=>{
-                return eachobj[key].toLowerCase().includes(value)
-            })
-        })
-        }else{
-            //this check avoids an empty table when something umavailabe is typed
-            this.filteredData = [...this.fullTableData]
+            window.clearTimeout(this.timer)
+            this.timer = window.setTimeout(()=>{
+                console.log(value)
+                this.filteredData = this.fullTableData.filter(eachobj=>{
+                    //Object.keys(eachobj) = ["Id", "Name", "Title", "Email"]
+                    return Object.keys(eachobj).some(key=>{
+                        return eachobj[key].toLowerCase().includes(value)
+                    })
+                })
+            }, 500)
+            }else{
+                //this check avoids an empty table when something umavailabe is typed
+                this.filteredData = [...this.fullTableData]
         }
     }
 }
