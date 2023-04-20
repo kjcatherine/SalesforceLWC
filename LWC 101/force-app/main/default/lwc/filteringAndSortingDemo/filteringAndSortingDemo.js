@@ -5,6 +5,7 @@ export default class FilteringAndSortingDemo extends LightningElement {
     fullTableData=[]
     filteredData =[]
     timer
+    filterBy="Name"
     @wire(getContactList)
     contactHandler({data, error}){
         if(data){
@@ -16,6 +17,21 @@ export default class FilteringAndSortingDemo extends LightningElement {
             console.error(error)
         }
     }
+
+    //Real life requirement-search by Nmae, etc, we need combobox for this
+    get FilterByOptions(){
+        return [
+                    { label: 'Id', value: 'Id' },
+                    { label: 'Name', value: 'Name' },
+                    { label: 'Title', value: 'Title' },
+                    { label: 'Email', value: 'Email' },
+                ];
+    }
+
+    filterByHandler(event){
+        this.filterBy = event.target.name
+    }
+
 
     filterHandler(event){
         const {value} = event.target

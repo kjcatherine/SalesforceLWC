@@ -3,10 +3,18 @@
         <div class="slds-p-around_medium">
             <lightning-layout>
                 <lightning-layout-item size="4" padding="around_small">
-                    <lightning-input type="text" 
+                    <!-- <lightning-input type="text" 
                     label="Filter" 
                     onkeyup={filterHandler}
-                    ></lightning-input>
+                    ></lightning-input> -->
+                    <lightning-combobox
+                    name="filterBy"
+                    label="FilterBy"
+                    value={filterBy}
+                    placeholder="Select Industry"
+                    options={FilterByOptions}
+                    onchange={filterByHandler} >
+                    </lightning-combobox>
                 </lightning-layout-item>
             </lightning-layout>
             <table class="slds-table slads-table_cell-buffer slds-table_bordered">
