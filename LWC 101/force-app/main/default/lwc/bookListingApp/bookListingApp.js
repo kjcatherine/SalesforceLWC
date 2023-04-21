@@ -17,6 +17,7 @@ export default class BookListingApp extends LightningElement {
         })
         .catch(error=>console.error(error))
     }
+    
     fetchBooksHandler(event){
         this.query= event.target.value
         window.clearTimeout(this.timer)
