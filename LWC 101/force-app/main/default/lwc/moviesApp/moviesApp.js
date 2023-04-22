@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-const MOVIE_URL = 'https://yts.mx/api/v2/list_movies.json?quality=3D'
+const MOVIE_URL = 'https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids'
 export default class MoviesApp extends LightningElement {
     movies
     connectedCallback(){
