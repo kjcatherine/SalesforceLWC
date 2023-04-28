@@ -20,6 +20,14 @@
                 </tbody>
             </table>
         </div>
-         <!--We will place this componet in the record page by editing a record builder  -->
+        <!-- Demonstrating pagination -->
+        <div class="slds-grid">
+            <div class="slds-m-around_medium">
+                <lightning-button label="Previous" onclick={handlePreviousPage}></lightning-button>
+            </div>
+            <div class="slds-m-around_medium">
+                <lightning-button label="Next" onclick={handleNextPage}></lightning-button>
+            </div>
+        </div>
     </lightning-card>
 </template>
