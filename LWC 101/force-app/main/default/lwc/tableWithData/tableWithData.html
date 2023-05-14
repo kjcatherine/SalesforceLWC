@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Data Table">
+        <div class="slds-m-around_medium">
+            <lightning-button variant="brand" label="Add Row" onclick={addRow}></lightning-button>
+        </div>
+        <table class="slds-table slds-table_bordered slds-table_fixed-layout">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Account Source</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="row" for:index="index">
+                    <tr key={row.id}>
+                        <td>
+                            <lightning-input type="text" value={row.name} onchange={handleInputChange} data-index={index}
+                                data-field="name"></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="text" value={row.phone} onchange={handleInputChange} data-index={index}
+                                data-field="phone"></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="text" value={row.accountSource} onchange={handleInputChange}
+                                data-index={index} data-field="accountSource"></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-button-icon icon-name="utility:delete" alternative-text="Remove" title="Remove"
+                                onclick={removeRow} data-index={index}></lightning-button-icon>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

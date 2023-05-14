@@ -18,8 +18,20 @@
                     onkeyup={filterHandler}
                     ></lightning-input>
                 </lightning-layout-item>
+
+                <lightning-layout-item size="2" alignment-bump="left" padding="around_small">
+                    <lightning-combobox
+                    name="sortedBy"
+                    label="Sort By"
+                    value={sortedBy}
+                    options={FilterByOptions}
+                    onchange={sortHandler} >
+                    </lightning-combobox>
+                </lightning-layout-item>
+
             </lightning-layout>
-            <table class="slds-table slads-table_cell-buffer slds-table_bordered">
+            
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
                 <thead>
                     <tr>
                         <template for:each={headings} for:item="heading">
@@ -33,7 +45,7 @@
                             <td>{data.Id}</td>
                             <td>{data.Name}</td>
                             <td>{data.Title}</td>
-                            <td>{data.Title}</td>
+                            <td>{data.Email}</td>
                         </tr>
                     </template>
                 </tbody>

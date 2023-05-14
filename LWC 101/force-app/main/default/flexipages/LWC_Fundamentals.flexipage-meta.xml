@@ -29,6 +29,24 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>age</name>
+                    <value>6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>heading</name>
+                    <value>Meta Config in LWC</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>levels</name>
+                    <value>High</value>
+                </componentInstanceProperties>
+                <componentName>lwcConfigDemo</componentName>
+                <identifier>c_lwcConfigDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>compCompositionParent</componentName>
                 <identifier>c_compCompositionParent</identifier>
             </componentInstance>

@@ -64,4 +64,8 @@
         <name>Zero_to_Hero_in_LWC</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>My_App</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

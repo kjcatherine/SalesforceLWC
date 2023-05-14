@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>wireDemoUserDetail</componentName>
+                <identifier>c_wireDemoUserDetail</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>getObjectInfoDemo</componentName>
+                <identifier>c_getObjectInfoDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>getPicklistValuesDemo</componentName>
+                <identifier>c_getPicklistValuesDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>getNavItemsDemo</componentName>
+                <identifier>c_getNavItemsDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>getListUiDemo</componentName>
+                <identifier>c_getListUiDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Wire Service</masterLabel>
+    <template>
+        <name>flexipage:appHomeTemplateTwoColumns</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

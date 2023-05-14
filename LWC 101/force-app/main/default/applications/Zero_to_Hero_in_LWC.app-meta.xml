@@ -12,6 +12,13 @@
     <label>Zero to Hero in LWC</label>
     <navType>Standard</navType>
     <tabs>LWC_Fundamentals</tabs>
+    <tabs>Movie_App</tabs>
+    <tabs>Filtering_and_Sorting</tabs>
+    <tabs>Maps_in_LWC</tabs>
+    <tabs>Books_Listing_App</tabs>
+    <tabs>Apex_in_LWC</tabs>
+    <tabs>CRUD_uiRecordApi</tabs>
+    <tabs>Wire_Service</tabs>
     <tabs>Base_Components</tabs>
     <tabs>Navigations</tabs>
     <tabs>Restaurant_Page</tabs>
@@ -22,6 +29,7 @@
     <tabs>Reuseable_Component</tabs>
     <tabs>Lightning_Messaging_Service</tabs>
     <tabs>Static_Resources_Context_and_Toast</tabs>
+    <tabs>Reservation__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Zero_to_Hero_in_LWC_UtilityBar</utilityBar>
 </CustomApplication>

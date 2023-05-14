@@ -6,6 +6,9 @@ export default class FilteringAndSortingDemo extends LightningElement {
     filteredData =[]
     timer
     filterBy="Name"
+
+    sortedBy = 'Name'
+    sortDirection = 'asc'
     @wire(getContactList)
     contactHandler({data, error}){
         if(data){
@@ -58,5 +61,23 @@ export default class FilteringAndSortingDemo extends LightningElement {
                 //this check avoids an empty table when something umavailabe is typed
                 this.filteredData = [...this.fullTableData]
         }
+    }
+    // Sort Handler
+    sortHandler(event){
+        this.sortedBy = event.target.value
+        this.filteredData = [...this.sortBy(this.filteredData)]
+        
+    }
+    sortBy(data){
+        const cloneData = [...data]
+        cloneData.sort((a,b)=>{
+            if(a[this.sortedBy] === b[this.sortedBy]){
+                return 0
+            }
+            return this.sortDirection === 'desc' ? 
+            a[this.sortedBy] > b[this.sortedBy] ? -1 : 1 :
+            a[this.sortedBy] < b[this.sortedBy] ? -1 : 1
+        })
+        return cloneData
     }
 }

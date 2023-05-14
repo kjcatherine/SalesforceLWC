@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>createRecordDemo</componentName>
+                <identifier>c_createRecordDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column1</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>deleteRecordDemo</componentName>
+                <identifier>c_deleteRecordDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>updateRecordDemo</componentName>
+                <identifier>c_updateRecordDemo</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>column2</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>CRUD uiRecordApi</masterLabel>
+    <template>
+        <name>flexipage:appHomeTemplateTwoColumns</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>
