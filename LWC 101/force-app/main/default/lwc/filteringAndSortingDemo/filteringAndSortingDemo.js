@@ -14,7 +14,9 @@ export default class FilteringAndSortingDemo extends LightningElement {
         if(data){
             console.log(data)
             this.fullTableData = data
-            this.filteredData = data
+            //this.filteredData = data
+            //to get this to be sorted on load
+            this.filteredData = [...this.sortBy(data)]
         }
         if(error){
             console.error(error)
@@ -32,6 +34,14 @@ export default class FilteringAndSortingDemo extends LightningElement {
                 ];
     }
 
+    get sortByOptions(){
+        return [
+                    { label: 'Id', value: 'Id' },
+                    { label: 'Name', value: 'Name' },
+                    { label: 'Title', value: 'Title' },
+                    { label: 'Email', value: 'Email' },
+                ];
+    }
     filterByHandler(event){
         this.filterBy = event.target.value
     }
@@ -62,7 +72,7 @@ export default class FilteringAndSortingDemo extends LightningElement {
                 this.filteredData = [...this.fullTableData]
         }
     }
-    // Sort Handler
+    // Sort logic
     sortHandler(event){
         this.sortedBy = event.target.value
         this.filteredData = [...this.sortBy(this.filteredData)]
