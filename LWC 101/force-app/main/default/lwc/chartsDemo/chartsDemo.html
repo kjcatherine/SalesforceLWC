@@ -2,13 +2,24 @@
     <lightning-layout multiple-rows>
         <lightning-layout-item size="6" padding="around-small">
             <lightning-card title="Total Opportunities 1">
-                <c-charts></c-charts>
+                <template if:true={pieChartLabels.length}>
+                    <c-charts type="doughnut" 
+                    chart-heading="Opportunities"
+                    chart-data={pieChartData}
+                    chart-labels={pieChartLabels}></c-charts>
+                </template>
+               
             </lightning-card>
         </lightning-layout-item>
 
         <lightning-layout-item size="6" padding="around-small">
             <lightning-card title="Total Opportunities 2">
-                <c-charts></c-charts>
+                <template if:true={pieChartLabels.length}>
+                    <c-charts type="doughnut" 
+                    chart-heading="Zero to Hero"
+                    chart-data={pieChartData}
+                    chart-labels={pieChartLabels}></c-charts>
+                </template>
             </lightning-card>
         </lightning-layout-item>
     </lightning-layout>

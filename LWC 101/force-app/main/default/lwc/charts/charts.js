@@ -1,10 +1,16 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import chartJs from '@salesforce/resourceUrl/chartJs'
 //To load a resource we need loadScript
 import {loadScript} from 'lightning/platformResourceLoader'
 export default class Charts extends LightningElement {
     isChartJsInitialized;
     chart;
+
+    @api type
+    @api chartHeading
+    @api chartData
+    @api chartLabels
+
     renderedCallback(){
         if(this.isChartJsInitialized){
             return;
@@ -28,20 +34,28 @@ export default class Charts extends LightningElement {
         }
         config(){
             return {
-                type: 'bar',
+                type: this.type,
                 data: {
-                  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                  labels: this.chartLabels ? this.chartLabels : [],
                   datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: this.chartHeading,
+                    data: this.chartData ? this.chartData : [],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)'
+                      ],
                     borderWidth: 1
                   }]
                 },
                 options: {
-                  scales: {
-                    y: {
-                      beginAtZero: true
-                    }
+                  responsive:true,
+                  legend:{
+                    position:'right'
+                  },
+                  animation:{
+                    animateScale:true,
+                    animateRotate:true
                   }
                 }
               }
