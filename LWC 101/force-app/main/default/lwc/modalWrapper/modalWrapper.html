@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Modal Component Demo">
+        <lightning-button variant="brand" label="open" onclick={openHandler}></lightning-button>
+    </lightning-card>
+
+    <template if:true={isOpen}>
+        <c-modal></c-modal>
+    </template>
+   
+</template>
