@@ -2,18 +2,18 @@
     <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_small">
         <div class="slds-modal__container">
         <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
-            <lightning-icon icon-name="utility-close" variant="inverse" alternative-text="close" title="close"></lightning-icon>
+            <lightning-icon onclick={closeModal} icon-name="utility:close" variant="inverse" alternative-text="close" title="close"></lightning-icon>
         </button>
         <div class="slds-modal__header">
-        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Modal header</h1>
+        <div id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+            <slot name="title"></slot>
+        </div>
         </div>
         <div class="slds-modal__content" id="modal-content-id-1">
-        <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt nostrud
-        ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.</p>
+            <slot></slot>
         </div>
-        <div class="slds-modal__footer">
-        <button class="slds-button slds-button_neutral" aria-label="Cancel and close">Cancel</button>
-        <button class="slds-button slds-button_brand">Save</button>
+        <div class="slds-modal__footer slds-hide">
+            <slot name="footer" onslotchange={handleSlotFooterChange}></slot>
         </div>
         </div>
         </section>

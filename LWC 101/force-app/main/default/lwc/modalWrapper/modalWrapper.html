@@ -4,7 +4,16 @@
     </lightning-card>
 
     <template if:true={isOpen}>
-        <c-modal></c-modal>
+        <c-modal onclose={closeHandler}>
+            <h1 slot="title">Modal Header</h1>
+            <!-- If you add tag without a slot it goes to the body automatically -->
+            <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia. Lorem aliqua enim laboris do dolor eiusmod officia. Mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident. Eiusmod et adipisicing culpa deserunt nostrud ad veniam nulla aute est. Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur</p>
+            <div slot="footer">
+                <button class="slds-button slds-button_neutral" onclick={closeHandler}>Cancel</button>
+                <button class="slds-button slds-button_brand">Save</button>
+                <!-- If we comment this footer out, the content goes away but a line remains which we do not need, go to main component html and add slds-hide to the footer class which will only show as long as content is passed in, also add onslotchange to the slot to handle the logic -->
+            </div>
+        </c-modal>
     </template>
    
 </template>

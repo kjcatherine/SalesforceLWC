@@ -6,4 +6,7 @@ export default class ModalWrapper extends LightningElement {
         console.log("clicked!!")
         this.isOpen = true
     }
+    closeHandler(){
+        this.isOpen = false
+    }
 }
