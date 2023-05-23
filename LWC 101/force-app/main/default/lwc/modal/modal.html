@@ -4,9 +4,9 @@
         <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
             <lightning-icon onclick={closeModal} icon-name="utility:close" variant="inverse" alternative-text="close" title="close"></lightning-icon>
         </button>
-        <div class="slds-modal__header">
+        <div class="slds-modal__header remove_header">
         <div id="modal-heading-01" class="slds-modal__title slds-hyphenate">
-            <slot name="title"></slot>
+            <slot name="title" onslotchange={handleSlotHeaderChange}></slot>
         </div>
         </div>
         <div class="slds-modal__content" id="modal-content-id-1">

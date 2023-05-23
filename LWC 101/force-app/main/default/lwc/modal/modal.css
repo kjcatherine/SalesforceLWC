@@ -1,0 +1,5 @@
+/* this will handle the header style should no slot be passed */
+.remove_header{
+    padding: 0px;
+    border: 0px;
+}

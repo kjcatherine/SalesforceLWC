@@ -12,4 +12,10 @@ export default class Modal extends LightningElement {
             footerEl.classList.remove('slds-hide')
         }
     }
+    handleSlotHeaderChange(){
+        const headerEl = this.template.querySelector('slds-modal__header')
+        if(headerEl){
+            headerEl.classList.remove('.remove_header')
+        }
+    }
 }
