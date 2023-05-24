@@ -1,6 +1,7 @@
 <template>
     <lightning-card title="Modal Component Demo">
         <lightning-button variant="brand" label="open" onclick={openHandler}></lightning-button>
+        <lightning-button variant="brand" label="open Second" onclick={openSecondHandler}></lightning-button>
     </lightning-card>
 
     <template if:true={isOpen}>
@@ -15,5 +16,15 @@
             </div>
         </c-modal>
     </template>
-   
+    
+    <template if:true={isOpenSecond}>
+        <c-modal onclose={closeHandler}>
+            <h1 slot="title">Second Modal Header</h1>
+            <p>Second modal text here</p>
+            <div slot="footer">
+                <button class="slds-button slds-button_neutral" onclick={secondCloseHandler}>Cancel</button>
+                <button class="slds-button slds-button_brand">Save</button>
+            </div>
+        </c-modal>
+    </template>
 </template>
