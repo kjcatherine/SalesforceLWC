@@ -1,3 +1,11 @@
 <template>
-    
+    <lightning-card title="CSV Demo">
+        <div class="slds-p-around_medium">
+            <template if:true={accountData}>
+                <template for:each={accountData} for:item="account">
+                    <p key={account.Id}>{account.Id} {account.Name} {account.AnnualRevenue} {account.Industry} {account.Phone}</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
 </template>
