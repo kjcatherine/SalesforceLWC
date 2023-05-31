@@ -1,7 +1,9 @@
 <template>
     <div>
         <template for:each={slidesData} for:item="slide">
-            <img key={slide.image} src={slide.image}/>
+            <div class={slide.cardClasses} key={slide.slideIndex}>
+                <img src={slide.image}/>
+            </div>
         </template>
     </div>
 </template>
