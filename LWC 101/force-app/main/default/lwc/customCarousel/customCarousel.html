@@ -13,4 +13,10 @@
         <a class="prev">&#10094;</a>
         <a class="next">&#10095;</a>
     </div>
+    <!-- Bottom dots -->
+    <div class="slds-text-align_center slds-p-around_medium">
+        <template for:each={slidesData} for:item="slide">
+            <span class={slide.dotClasses} key={slide.slideIndex}></span>
+        </template>
+    </div>
 </template>

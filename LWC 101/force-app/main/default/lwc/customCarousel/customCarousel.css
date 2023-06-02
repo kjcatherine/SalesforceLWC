@@ -31,3 +31,15 @@
     top: 0;
     color: #f2f2f2;
 }
+.dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #bbb;
+    margin: 0 2px;
+    display: inline-block;
+}
+.active, .dot:hover{
+    background-color: #717171;
+}
