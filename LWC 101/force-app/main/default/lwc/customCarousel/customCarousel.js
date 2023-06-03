@@ -8,6 +8,7 @@ const DOT_HIDDEN_CLASSES = 'dot'
 
 export default class CustomCarousel extends LightningElement {
    slides=[]
+   slideIndex = 1
     // @api slidesData
    @api
    get slidesData(){
@@ -29,6 +30,32 @@ export default class CustomCarousel extends LightningElement {
         }
     })
    }
-
-
+   backSlide(){
+    let slideIndex = this.slideIndex-1
+    this.slideSelectionHandler(slideIndex)
+   }
+   forwardSlide(){
+    let slideIndex = this.slideIndex+1
+    this.slideSelectionHandler(slideIndex)
+   }
+   slideSelectionHandler(id){
+        if(id > this.slides.length){
+            this.slideIndex = 1
+        } else if(id < 1){
+            this.slideIndex = this.slides.length
+        }else{
+            this.slideIndex = id
+        }
+        this.slides = this.slides.map((item)=>{
+            return this.slideIndex === item.slideIndex ? {
+                ...item,
+                cardClasses: CARD_VISIBLE_CLASSES,
+                dotClasses: DOT_VISIBLE_CLASSES,
+            } : {
+                ...item,
+                cardClasses: CARD_HIDDEN_CLASSES,
+                dotClasses: DOT_HIDDEN_CLASSES
+            }
+        })
+   }
 }
