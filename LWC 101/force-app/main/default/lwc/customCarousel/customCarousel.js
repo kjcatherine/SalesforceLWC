@@ -30,6 +30,10 @@ export default class CustomCarousel extends LightningElement {
         }
     })
    }
+   currentSlide(event){
+    let slideIndex = Number(event.target.dataset.id)
+    this.slideSelectionHandler(slideIndex)
+   }
    backSlide(){
     let slideIndex = this.slideIndex-1
     this.slideSelectionHandler(slideIndex)

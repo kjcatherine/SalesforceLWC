@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-is-relative">
+    <div class="slds-is-relative container">
         <template for:each={slidesData} for:item="slide">
             <div class={slide.cardClasses} key={slide.slideIndex}>
                 <div class="slideNumbers">{slide.slideIndex}/{slidesData.length}</div>
@@ -16,7 +16,7 @@
     <!-- Bottom dots -->
     <div class="slds-text-align_center slds-p-around_medium">
         <template for:each={slidesData} for:item="slide">
-            <span class={slide.dotClasses} key={slide.slideIndex}></span>
+            <span class={slide.dotClasses} data-id={slide.slideIndex} key={slide.slideIndex} onclick={currentSlide}></span>
         </template>
     </div>
 </template>
