@@ -6,9 +6,14 @@ const CARD_HIDDEN_CLASSES = 'slds-hide'
 const DOT_VISIBLE_CLASSES = 'dot active'
 const DOT_HIDDEN_CLASSES = 'dot'
 
+const DEFAULT_SLIDER_TIMER = 3000
+
 export default class CustomCarousel extends LightningElement {
    slides=[]
    slideIndex = 1
+   timer
+   @api slideTimer = DEFAULT_SLIDER_TIMER
+   @api enableAutoScroll = false //Gives user control
     // @api slidesData
    @api
    get slidesData(){
@@ -30,6 +35,20 @@ export default class CustomCarousel extends LightningElement {
         }
     })
    }
+// Implement auto load that should happen on page load so we use connectedCallback hook
+connectedCallback(){
+    if(this.enableAutoScroll){
+        this.timer = window.setInterval(()=>{
+            this.slideSelectionHandler(this.slideIndex+1)
+        }, Number(this.slideTimer))
+    }
+}
+disconnectedCallback(){
+    if(this.enableAutoScroll){
+        window.clearInterval(this.timer)
+    }
+}
+
    currentSlide(event){
     let slideIndex = Number(event.target.dataset.id)
     this.slideSelectionHandler(slideIndex)
