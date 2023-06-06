@@ -1,19 +1,35 @@
+// When buiding a reuseable component, its alwasy best practice to add comments for the user
+/* 
+* enable-auto-scroll for autoscroll to enable
+* slide-timer for controlling the slider speed, default is 3000
+* slides-data is the data and data should be in this format {image:'', heading:'', description:''}
+* show-full is for the 100% width, otherwise use customWidth
+* custom_width is used for controlling the width of the slider
+*/
+
 import { LightningElement, api } from 'lwc';
 
-const CARD_VISIBLE_CLASSES = 'slds-show'
-const CARD_HIDDEN_CLASSES = 'slds-hide'
+const CARD_VISIBLE_CLASSES = 'fade slds-show'
+const CARD_HIDDEN_CLASSES = 'fade slds-hide'
 
 const DOT_VISIBLE_CLASSES = 'dot active'
 const DOT_HIDDEN_CLASSES = 'dot'
 
 const DEFAULT_SLIDER_TIMER = 3000
+const DEFAULT_SLIDER_WIDTH = 700
 
 export default class CustomCarousel extends LightningElement {
    slides=[]
    slideIndex = 1
    timer
    @api slideTimer = DEFAULT_SLIDER_TIMER
-   @api enableAutoScroll = false //Gives user control
+   @api enableAutoScroll = false //Gives user of the reusebale component some control
+   //Control over the width
+   @api customWidth =  DEFAULT_SLIDER_WIDTH
+   @api showFull = false
+   get maxWidth(){
+        return this.showFull ? `width:100%` : `width:${Number(this.customWidth)}px`
+   }
     // @api slidesData
    @api
    get slidesData(){

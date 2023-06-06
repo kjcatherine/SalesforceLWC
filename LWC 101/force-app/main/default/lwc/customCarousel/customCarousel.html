@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-is-relative container">
+    <div class="slds-is-relative container" style={maxWidth}>
         <template for:each={slidesData} for:item="slide">
             <div class={slide.cardClasses} key={slide.slideIndex}>
                 <div class="slideNumbers">{slide.slideIndex}/{slidesData.length}</div>
