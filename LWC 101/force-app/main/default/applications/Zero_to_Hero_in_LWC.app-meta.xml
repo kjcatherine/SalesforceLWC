@@ -12,6 +12,9 @@
     <label>Zero to Hero in LWC</label>
     <navType>Standard</navType>
     <tabs>LWC_Fundamentals</tabs>
+    <tabs>Custom_Carousel</tabs>
+    <tabs>Reuseable_Component</tabs>
+    <tabs>Charts_In_LWC</tabs>
     <tabs>Movie_App</tabs>
     <tabs>Filtering_and_Sorting</tabs>
     <tabs>Maps_in_LWC</tabs>
@@ -26,7 +29,6 @@
     <tabs>Styling_in_LWC</tabs>
     <tabs>Lifecycle_Hooks</tabs>
     <tabs>Component_Communication</tabs>
-    <tabs>Reuseable_Component</tabs>
     <tabs>Lightning_Messaging_Service</tabs>
     <tabs>Static_Resources_Context_and_Toast</tabs>
     <tabs>Reservation__c</tabs>
