@@ -1,0 +1,16 @@
+.input-icon {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+}
+.right-icon{
+    right: 1px;
+}
+.left-icon{
+    left: 1px;
+}

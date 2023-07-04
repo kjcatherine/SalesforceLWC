@@ -1,0 +1,8 @@
+.icon-left .slds-input{
+    padding-left: 1.5rem;
+    /* padding-left: spacingLarge; */
+    /* padding-left:var(--lwc-varSpacingLarge, 1.5rem); */
+}
+.icon-right .slds-input{
+    padding-left:var(--lwc-varSpacingLarge, 1.5rem);
+}
