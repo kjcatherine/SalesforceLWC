@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,wire } from 'lwc';
 import {getRelatedListCount} from 'lightning/uiRelatedListApi'
 export default class GetRelatedListCountDemo extends LightningElement {
   relatedData
