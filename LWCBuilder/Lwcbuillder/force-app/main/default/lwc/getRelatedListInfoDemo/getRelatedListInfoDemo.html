@@ -1,3 +1,11 @@
 <template>
-    
+    <lightning-card title="getRelatedListInfo demo">
+        <div class="slds-var-p-around_medium">
+          <template if:true={relatedListData}>
+            <template for:each={relatedListData} for:item="info">
+              <p key={info.fieldApiName}>{info.fieldApiName}</p>
+            </template>
+          </template>
+        </div>
+      </lightning-card>
 </template>
