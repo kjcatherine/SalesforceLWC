@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="getRelatedListRecords Demo">
+        <div class="slds-var-p-around_medium">
+          <template if:true={recordList}>
+            <template for:each={recordList} for:item="rec">
+              <p key={rec.fields.Id.value}>{rec.fields.Name.value}</p>
+            </template>
+          </template>
+        </div>
+      </lightning-card>
+</template>
