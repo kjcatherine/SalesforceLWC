@@ -1,3 +1,12 @@
 <template>
-    
+    <lightning-card title="getRelatedListsInfo Demo">
+        <div class="slds-var-p-around_medium">
+          <h1>Related List on Account Record Page</h1>
+          <template if:true={relatedData}>
+            <template for:each={relatedData} for:item="list">
+              <p key={list.label}>{list.label}</p>
+            </template>
+          </template>
+        </div>
+      </lightning-card>
 </template>
