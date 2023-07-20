@@ -1,6 +1,17 @@
 import { LightningElement } from 'lwc';
 import LightningAlert from 'lightning/alert'
 export default class LightningAlertDemo extends LightningElement {
+    /*alertHandler(event){
+        const {name} = event.target
+        //window.alert("Hello") //Deprecated in JS soon
+        LightningAlert.open({
+            message:"This is an alert",
+            label:`I am ${name} alert header`,
+            theme:name //success -> green, warning->orange, error->red, infro->grey
+        })
+    }*/
+
+    //In the documentation, async awit is used, usually when we need to perform another action right after the alert
     alertHandler(event){
         const {name} = event.target
         //window.alert("Hello") //Deprecated in JS soon
@@ -9,5 +20,12 @@ export default class LightningAlertDemo extends LightningElement {
             label:`I am ${name} alert header`,
             theme:name //success -> green, warning->orange, error->red, infro->grey
         })
+
+        let x =3
+        let y = 2
+        this.add(x,y)
+    }
+    add(a,b){
+        console.log(a+b)
     }
 }
