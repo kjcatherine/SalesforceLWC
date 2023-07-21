@@ -12,15 +12,15 @@ export default class LightningAlertDemo extends LightningElement {
     }*/
 
     //In the documentation, async awit is used, usually when we need to perform another action right after the alert
-    alertHandler(event){
+    async alertHandler(event){
         const {name} = event.target
         //window.alert("Hello") //Deprecated in JS soon
-        LightningAlert.open({
+        await LightningAlert.open({
             message:"This is an alert",
             label:`I am ${name} alert header`,
             theme:name //success -> green, warning->orange, error->red, infro->grey
-        })
-
+        }) //.then(result=>{..code})
+        //The below code can be wrapped in a then method if you dont want to use async 
         let x =3
         let y = 2
         this.add(x,y)
