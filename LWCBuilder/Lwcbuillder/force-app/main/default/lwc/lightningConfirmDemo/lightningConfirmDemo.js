@@ -1,3 +1,9 @@
 import { LightningElement } from 'lwc';
-
-export default class LightningConfirmDemo extends LightningElement {}
+import LightningConfirm from 'lightning/confirm'
+export default class LightningConfirmDemo extends LightningElement {
+    confirmHandler(){
+        LightningConfirm.open({
+            message:"Would you like to refresh the page"
+        })
+    }
+}
