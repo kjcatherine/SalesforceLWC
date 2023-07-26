@@ -6,7 +6,7 @@ export default class LightningConfirmDemo extends LightningElement {
         this.result = await LightningConfirm.open({
             message:"Would you like to refresh the page",
             label:"Are you sure?",
-            theme:"success",
+            theme:"warning",
             //variant:"headerless"
         })
         console.log(this.result)
