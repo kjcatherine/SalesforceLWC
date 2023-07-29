@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="if:true and if:false basic demo">
+        <div class="slds-var-p-around_medium">
+            <lightning-button label="Show Text" onclick={showTextHandler}></lightning-button>
+            <template if:true={showText}>
+                Hello there
+            </template>
+            <template if:false={showText}>
+                *********************
+            </template>
+        </div>
+    </lightning-card>
+</template>
