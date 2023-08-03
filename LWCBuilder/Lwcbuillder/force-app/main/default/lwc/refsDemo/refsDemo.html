@@ -1,8 +1,10 @@
 <template>
-    <lightning-card title="lwc:if and lwc:else Getter demo">
+    <lightning-card title="refs Directive demo">
         <div class="slds-var-p-around_medium">
             <lightning-input label="Name" lwc:ref="nameRef"></lightning-input>
             <lightning-input label="Age" type="number" lwc:ref="ageRef"></lightning-input>
+            <!-- If the tmeplate has duplicate lwc:ref directives, this.refs refrences the last one -->
+            <lightning-input label="New Age" type="number" lwc:ref="ageRef"></lightning-input>
             <lightning-button label="Submit" class="slds-grid slds-var-m-top_medium" onclick={submitHandler}></lightning-button>
 
             <div lwc:ref="responseRef"></div>
