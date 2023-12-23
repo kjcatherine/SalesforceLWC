@@ -1,0 +1,10 @@
+/* div{
+    color: blue;
+    background: white;
+} */
+
+/* to use a design token start with var(--lwc-tokenname) */
+div{
+    color:var(--lwc-brandAccessible);
+    background: var(--lwc-colorBackgroundAlt);
+}
